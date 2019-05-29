@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Haxe basics · GitBook</title>
+        <title>Example https api NASA · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="quick-install.html" />
+    <link rel="next" href="example.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../04haxelow/example.html" />
     
 
     </head>
@@ -110,9 +110,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="about.html">
+        <li class="chapter " data-level="1.2" data-path="../haxe/about.html">
             
-                <a href="about.html">
+                <a href="../haxe/about.html">
             
                     
                     Haxe basics
@@ -124,9 +124,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="quick-install.html">
+        <li class="chapter " data-level="1.2.1" data-path="../haxe/quick-install.html">
             
-                <a href="quick-install.html">
+                <a href="../haxe/quick-install.html">
             
                     
                     Quick install
@@ -137,9 +137,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="installation.html">
+        <li class="chapter " data-level="1.2.2" data-path="../haxe/installation.html">
             
-                <a href="installation.html">
+                <a href="../haxe/installation.html">
             
                     
                     Installation
@@ -150,9 +150,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="choosing-a-code-editor.html">
+        <li class="chapter " data-level="1.2.3" data-path="../haxe/choosing-a-code-editor.html">
             
-                <a href="choosing-a-code-editor.html">
+                <a href="../haxe/choosing-a-code-editor.html">
             
                     
                     Code editor
@@ -163,9 +163,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="hello-world.html">
+        <li class="chapter " data-level="1.2.4" data-path="../haxe/hello-world.html">
             
-                <a href="hello-world.html">
+                <a href="../haxe/hello-world.html">
             
                     
                     Hello world
@@ -176,9 +176,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="learn-haxe.html">
+        <li class="chapter " data-level="1.2.5" data-path="../haxe/learn-haxe.html">
             
-                <a href="learn-haxe.html">
+                <a href="../haxe/learn-haxe.html">
             
                     
                     Learn Haxe
@@ -329,9 +329,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../06nasa/about.html">
+        <li class="chapter active" data-level="1.8" data-path="about.html">
             
-                <a href="../06nasa/about.html">
+                <a href="about.html">
             
                     
                     Example https api NASA
@@ -343,9 +343,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../06nasa/example.html">
+        <li class="chapter " data-level="1.8.1" data-path="example.html">
             
-                <a href="../06nasa/example.html">
+                <a href="example.html">
             
                     
                     How to
@@ -578,7 +578,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Haxe basics</a>
+        <a href=".." >Example https api NASA</a>
     </h1>
 </div>
 
@@ -593,49 +593,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="what-is-haxe"><a name="what-is-haxe" class="plugin-anchor" href="#what-is-haxe"><i class="fa fa-link" aria-hidden="true"></i></a>What is Haxe?</h1>
-<p><img src="../img/haxe_logo.png" alt="Haxe logo"></p>
-<p>Lets get the Wikipedia description first:</p>
+                                <h1 id="nasa-api"><a name="nasa-api" class="plugin-anchor" href="#nasa-api"><i class="fa fa-link" aria-hidden="true"></i></a>NASA API</h1>
+<p>If you want to access the information on a website you will need to register yourself as a developer.
+With that key you can get the information you want.</p>
+<p>They do that, because they want to check what you are doing with that information...</p>
+<p>The api-key is not transferable. And if I would put it up here, I would break the agreement I made with that particular company.
+That is bad news for the Ajax calls I want to show.</p>
+<p>I started looking for an API that could be use <em>without</em> having API-KEY.</p>
+<p>I found it at <a href="https://api.nasa.gov/api.html" target="_blank">NASA</a></p>
 <blockquote>
-<p>Haxe is an open source high-level multi-platform programming language and compiler that can produce applications and source code for many different platforms from a single code-base.</p>
-<p>Haxe includes a set of common functionality that is supported across all platforms, such as numeric data types, text, arrays, binary and some common file formats. Haxe also includes platform-specific API for Adobe Flash, C++, PHP and other languages.</p>
-<p>Code written in the Haxe language can be source-to-source compiled into ActionScript 3 code, JavaScript programs, Java, C# , C++ standalone applications, Python, PHP, Apache CGI, and Node.js server-side applications.</p>
+<p>You do not need to authenticate to explore the NASA data.</p>
 </blockquote>
-<p><em>From <a href="https://en.wikipedia.org/wiki/Haxe" target="_blank">wikipedia</a></em></p>
-<hr>
-<p>And the official description:</p>
-<blockquote>
-<p>Haxe consists of a high-level, open source programming language and a compiler. It allows compilation of programs, written using an ECMAScript-oriented syntax, to multiple target languages. Employing proper abstraction, it is possible to maintain a single code-base which compiles to multiple targets.</p>
-<p>Haxe is strongly typed but the typing system can be subverted where required. Utilizing type information, the Haxe type system can detect errors at compile-time which would only be noticeable at run-time in the target language. Furthermore, type information can be used by the target generators to generate optimized and robust code.</p>
-</blockquote>
-<p><em>From <a href="http://haxe.org/manual/introduction-what-is-haxe.html" target="_blank">haxe.org - manual</a></em></p>
-<hr>
-<h2 id="history"><a name="history" class="plugin-anchor" href="#history"><i class="fa fa-link" aria-hidden="true"></i></a>History</h2>
-<p>A long time ago, there was MTASC, the ActionScript 2 compiler which brought Flash to the entreprise,
-and its author, <a href="https://twitter.com/ncannasse" target="_blank">Nicolas Cannasse</a>, decided to create a new open-source
-language inspired by ActionScript and ML languages like Ocaml: Haxe.</p>
-<p>Around 2006, Haxe was born, designed to be adapted to a wide variety of targets, including Flash and JavaScript.</p>
-<h2 id="early-users"><a name="early-users" class="plugin-anchor" href="#early-users"><i class="fa fa-link" aria-hidden="true"></i></a>Early users</h2>
-<p>It was already the most modern compile-to-JS language, but of course a big focus from the author&apos;s company
-was games, and likewise the initial community using Haxe was certainly oriented into gaming more than web apps.</p>
-<p>Quickly small companies and indie developers wanted to just code everything with Haxe: PHP on the server,
-JS for the web interactions, Flash for games, then C++ to look for more performance and freedom in games.</p>
-<p>NME and OpenFl appeared as the first big efforts to reproduce the Flash API for desktop and mobile - people
-have started, abusively, assimilating OpenFl with Haxe, while it was just one library among many.</p>
-<h2 id="the-raise-of-javascript"><a name="the-raise-of-javascript" class="plugin-anchor" href="#the-raise-of-javascript"><i class="fa fa-link" aria-hidden="true"></i></a>The raise of JavaScript</h2>
-<p>JavaScript has taken the world by storm now; people use it for increasingly complex browser apps, but also
-for command line and server applications, and even more recently for native apps using react-native.</p>
-<p>Following this trend, users of Haxe-JavaScript have also grown and keep up with the state of the art,
-and Haxe developers believe it&apos;s a better language for small to huge JavaScript projects.</p>
-<p>A popular language like TypeScript, which appeared much later than Haxe and recently gained a large
-following thanks to being closer to ES6 and backed by big corporations, shows that typed languages
-are a concern which appeals to JavaScript developers. And while TypeScript is a decent language, it
-essentially has the same pros and cons as regular JavaScript and compilation is several orders of
-magnitude slower than Haxe for large projects.</p>
-<p>This documentation will hopefully demonstrate how easy it is to use Haxe for JavaScript development. It
-may not look as easy as other compile-to-JS to get started but it really doesn&apos;t require a big investment
-to become familiar with it - and it will make you a better programmer.</p>
-<hr>
+<h2 id="demokey-rate-limits"><a name="demokey-rate-limits" class="plugin-anchor" href="#demokey-rate-limits"><i class="fa fa-link" aria-hidden="true"></i></a>DEMO_KEY Rate Limits</h2>
+<p>In documentation examples, we use the special DEMO_KEY api key.
+This API key can be used for initially exploring APIs prior to signing up. But it has much lower rate limits, so you&apos;re encouraged to signup for your own API key if you plan to use the API (sign-up is quick and easy). The rate limits for the DEMO_KEY are:</p>
+<ul>
+<li>Hourly Limit: 30 requests per IP address per hour</li>
+<li>Daily Limit: 50 requests per IP address per day</li>
+</ul>
+<h2 id="more-easy-to-access-data-from-nasa"><a name="more-easy-to-access-data-from-nasa" class="plugin-anchor" href="#more-easy-to-access-data-from-nasa"><i class="fa fa-link" aria-hidden="true"></i></a>More, easy to access, data from NASA</h2>
+<p>I used the <a href="https://api.nasa.gov/api.html#apod" target="_blank">APOD</a> but there is more:</p>
+<ul>
+<li><a href="https://api.nasa.gov/api.html#apod" target="_blank">APOD</a> : beautiful images from space</li>
+<li><a href="https://api.nasa.gov/api.html#earth" target="_blank">Earth</a> : images of earth taken from NASA satellites, with intervals of 16 days</li>
+<li><a href="https://api.nasa.gov/api.html#earth-temperature-anomalies" target="_blank">Earth temperature anomalies</a> : temperatures on a specific place starting 1880</li>
+<li><a href="https://api.nasa.gov/api.html#patents" target="_blank">Patents</a> : The NASA patent portfolio</li>
+<li><a href="https://api.nasa.gov/api.html#sounds" target="_blank">Sounds</a> : Sounds from space!!! (Beta)</li>
+</ul>
+<p>Just keep in mind that there is a limit and if you want to exceed that limit you should ask for a api-key.</p>
 
                                 
                                 </section>
@@ -663,12 +648,12 @@ to become familiar with it - and it will make you a better programmer.</p>
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../04haxelow/example.html" class="navigation navigation-prev " aria-label="Previous page: How to">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="quick-install.html" class="navigation navigation-next " aria-label="Next page: Quick install">
+                <a href="example.html" class="navigation navigation-next " aria-label="Next page: How to">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -679,7 +664,7 @@ to become familiar with it - and it will make you a better programmer.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Haxe basics","level":"1.2","depth":1,"next":{"title":"Quick install","level":"1.2.1","depth":2,"path":"haxe/quick-install.md","ref":"haxe/quick-install.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"intro.md","ref":"intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-xxxxxx"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"haxe/about.md","mtime":"2018-02-15T15:19:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T21:47:15.654Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Example https api NASA","level":"1.8","depth":1,"next":{"title":"How to","level":"1.8.1","depth":2,"path":"06nasa/example.md","ref":"06nasa/example.md","articles":[]},"previous":{"title":"How to","level":"1.7.1","depth":2,"path":"04haxelow/example.md","ref":"04haxelow/example.md","articles":[]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-xxxxxx"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"06nasa/about.md","mtime":"2018-01-09T08:46:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T21:47:15.654Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
