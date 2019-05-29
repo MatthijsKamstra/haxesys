@@ -61,24 +61,21 @@ req.request( false ); // false=GET, true=POST
 ```
 
 
-
 ## The Haxe build file, build.hxml
 
-There are a lot of different arguments that you are able to pass to the Haxe compiler.
-These arguments can also be placed into a text file of one per line with the extension hxml. This file can then be passed directly to the Haxe compiler as a build script.
+I use one [`build.hxml`](/code/build.hxml) to build all other build files:
 
-```
-# // build.hxml
--cp src
--main Main
--python bin/example.py
--dce full
--cmd cd bin
--cmd python3 example.py
-```
+- build_cpp.hxml
+- build_cs.hxml
+- build_java.hxml
+- build_node.hxml
+- build_python.hxml
+
+Check out the files in the [`/code`](/code)-folder.
 
 
-## Build Python with Haxe
+
+## Build all targets with Haxe and start the specific target
 
 To finish and see what we have, build the file and see the result
 

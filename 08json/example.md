@@ -18,6 +18,7 @@ See example below:
 + foobar
 	+ assets
 		- users.json
+	+ bin
 	+ src
 		- Main.hx
 	- build.hxml
@@ -32,7 +33,7 @@ This example is getting to big to post here, so if you want to check out the com
 So the first part of this code is loading the `json` file:
 
 ```
-var path = Sys.getCwd() + '/assets/users.json';
+var path = Path.normalize(Sys.getCwd().split('bin/')[0] + '/assets/users.json');
 
 if(sys.FileSystem.exists(path)){
 	var str : String = sys.io.File.getContent(path);
@@ -96,22 +97,19 @@ typedef User =
 
 ## The Haxe build file, build.hxml
 
-Copy and past the following lines in a document named `build.hxml`
-This is the short version, you want to chech out the full version open this [file](/code/build.hxml);
+I use one [`build.hxml`](/code/build.hxml) to build all other build files:
 
-```
-# // build.hxml
--cp src
--main Main
--cs out
--dce full
---next
--cmd cd out/bin
--cmd mono Main.exe
-```
+- build_cpp.hxml
+- build_cs.hxml
+- build_java.hxml
+- build_node.hxml
+- build_python.hxml
+
+Check out the files in the [`/code`](/code)-folder.
 
 
-## Build C# with Haxe and start export with mono
+
+## Build all targets with Haxe and start the specific target
 
 To finish and see what we have, build the file and see the result
 
@@ -119,7 +117,6 @@ To finish and see what we have, build the file and see the result
 2. `cd ` to the correct folder where you have saved the `build.hxml`
 3. type `haxe build.hxml`
 4. press enter
-
 
 
 

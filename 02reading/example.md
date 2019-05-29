@@ -10,6 +10,7 @@ See example below:
 
 ```
 + foobar
+	+ bin
 	+ src
 		- Main.hx
 	- build.hxml
@@ -22,18 +23,13 @@ Open your favorite editor, copy/paste the code and save it in the `src` folder.
 
 
 ```
-package ;
-
-/**
- * @author Matthijs Kamstra aka [mck]
- */
 class Main {
 	function new(){
-		trace("C# reading and writing Example");
+		trace("Reading and writing example");
 
 		var str:String = 'Writing and reading a simple text file.!\nWritten on: ' + Date.now().toString();
 
-		// write the file the Haxe way: will work on sys targets (lua, python, neko, cpp, hl, php, java, cs)
+		// write the file
 		sys.io.File.saveContent('hello.txt', str);
 
 		// read the file
@@ -49,24 +45,22 @@ class Main {
 
 
 
+
 ## The Haxe build file, build.hxml
 
-Copy and past the following lines in a document named `build.hxml`
-This is the short version, you want to chech out the full version open this [file](/code/build.hxml);
+I use one [`build.hxml`](/code/build.hxml) to build all other build files:
 
-```
-# // build.hxml
--cp src
--main Main
--cs out
--dce full
---next
--cmd cd out/bin
--cmd mono Main.exe
-```
+- build_cpp.hxml
+- build_cs.hxml
+- build_java.hxml
+- build_node.hxml
+- build_python.hxml
+
+Check out the files in the [`/code`](/code)-folder.
 
 
-## Build C# with Haxe and start export with mono
+
+## Build all targets with Haxe and start the specific target
 
 To finish and see what we have, build the file and see the result
 
