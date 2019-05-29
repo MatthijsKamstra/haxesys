@@ -1,0 +1,18 @@
+-cmd echo "  ├─┬ Start building targets"
+
+# nodejs works with haxelow but you need to install a couple of packages,
+# so I decided it would be become to complex te explain
+# https://github.com/ciscoheat/haxelow
+# For Node.js: Define -D nodejs or use -lib hxnodejs. The npm packages steno and graceful-fs are required.
+# -cmd echo "  │ ├── node"
+# -cmd haxe build_node.hxml
+-cmd echo "  │ ├── python"
+-cmd haxe build_python.hxml
+-cmd echo "  │ ├── cpp"
+-cmd haxe build_cpp.hxml
+-cmd echo "  │ ├── cs"
+-cmd haxe build_cs.hxml
+-cmd echo "  │ ├── java"
+-cmd haxe build_java.hxml
+
+-cmd echo "  └── Finished building targets"
