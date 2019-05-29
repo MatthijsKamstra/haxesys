@@ -571,13 +571,14 @@ See example below:</p>
 <pre><code>+ foobar
     + assets
         - users.json
+    + bin
     + src
         - Main.hx
     - build.hxml
 </code></pre><h2 id="the-mainhx"><a name="the-mainhx" class="plugin-anchor" href="#the-mainhx"><i class="fa fa-link" aria-hidden="true"></i></a>The Main.hx</h2>
 <p>This example is getting to big to post here, so if you want to check out the complete file go and check out <a href="https://github.com/MatthijsKamstra/haxeunity/tree/master/08json/code/Main.hx" target="_blank">Main.hx</a></p>
 <p>So the first part of this code is loading the <code>json</code> file:</p>
-<pre><code>var path = Sys.getCwd() + &apos;/assets/users.json&apos;;
+<pre><code>var path = Path.normalize(Sys.getCwd().split(&apos;bin/&apos;)[0] + &apos;/assets/users.json&apos;);
 
 if(sys.FileSystem.exists(path)){
     var str : String = sys.io.File.getContent(path);
@@ -624,17 +625,16 @@ if(sys.FileSystem.exists(path)){
 }
 </code></pre>
 <h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
-<p>Copy and past the following lines in a document named <code>build.hxml</code>
-This is the short version, you want to chech out the full version open this <a href="../code/build.hxml">file</a>;</p>
-<pre><code># // build.hxml
--cp src
--main Main
--cs out
--dce full
---next
--cmd cd out/bin
--cmd mono Main.exe
-</code></pre><h2 id="build-c-with-haxe-and-start-export-with-mono"><a name="build-c-with-haxe-and-start-export-with-mono" class="plugin-anchor" href="#build-c-with-haxe-and-start-export-with-mono"><i class="fa fa-link" aria-hidden="true"></i></a>Build C# with Haxe and start export with mono</h2>
+<p>I use one <a href="../code/build.hxml"><code>build.hxml</code></a> to build all other build files:</p>
+<ul>
+<li>build_cpp.hxml</li>
+<li>build_cs.hxml</li>
+<li>build_java.hxml</li>
+<li>build_node.hxml</li>
+<li>build_python.hxml</li>
+</ul>
+<p>Check out the files in the <a href="../code"><code>/code</code></a>-folder.</p>
+<h2 id="build-all-targets-with-haxe-and-start-the-specific-target"><a name="build-all-targets-with-haxe-and-start-the-specific-target" class="plugin-anchor" href="#build-all-targets-with-haxe-and-start-the-specific-target"><i class="fa fa-link" aria-hidden="true"></i></a>Build all targets with Haxe and start the specific target</h2>
 <p>To finish and see what we have, build the file and see the result</p>
 <ol>
 <li>Open your terminal</li>
@@ -685,7 +685,7 @@ This is the short version, you want to chech out the full version open this <a h
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.9.1","depth":2,"next":{"title":"Example hxml","level":"1.10","depth":1,"path":"20build/about.md","ref":"20build/about.md","articles":[{"title":"How to","level":"1.10.1","depth":2,"path":"20build/example.md","ref":"20build/example.md","articles":[]}]},"previous":{"title":"Example Json","level":"1.9","depth":1,"path":"08json/about.md","ref":"08json/about.md","articles":[{"title":"How to","level":"1.9.1","depth":2,"path":"08json/example.md","ref":"08json/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-xxxxxx"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"08json/example.md","mtime":"2019-05-28T10:30:18.062Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T21:16:28.584Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.9.1","depth":2,"next":{"title":"Example hxml","level":"1.10","depth":1,"path":"20build/about.md","ref":"20build/about.md","articles":[{"title":"How to","level":"1.10.1","depth":2,"path":"20build/example.md","ref":"20build/example.md","articles":[]}]},"previous":{"title":"Example Json","level":"1.9","depth":1,"path":"08json/about.md","ref":"08json/about.md","articles":[{"title":"How to","level":"1.9.1","depth":2,"path":"08json/example.md","ref":"08json/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-xxxxxx"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"08json/example.md","mtime":"2019-05-29T21:35:54.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T21:38:50.568Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
