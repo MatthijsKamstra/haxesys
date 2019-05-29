@@ -1,0 +1,63 @@
+-cmd echo "├─┬ Start Haxe build"
+
+
+# extremly simple hello world
+-cmd cd haxe/code/
+--next
+-cmd echo "│ ├── haxe/code"
+build.hxml
+
+
+# hello world
+-cmd cd ../../
+-cmd cd 00helloworld/code/
+--next
+-cmd echo "│ ├── 00helloworld/code"
+build.hxml
+
+# write file
+-cmd ls
+-cmd cd ../../../../
+-cmd ls
+-cmd cd 01writing/code/
+--next
+build.hxml
+-cmd echo "│ ├── 01writing_haxe/code"
+
+# reading file
+-cmd cd ../../../../
+-cmd cd 02reading/code/
+--next
+build.hxml
+-cmd echo "│ ├── 02reading_haxe/code"
+
+# local json database
+-cmd cd ../../../../
+-cmd cd 04haxelow/code/
+--next
+build.hxml
+-cmd echo "│ ├── 04haxelow/code"
+
+# https nasa api call
+-cmd cd ../../../../
+-cmd cd 04haxelow/code/
+--next
+build.hxml
+-cmd echo "│ ├── 04haxelow/code"
+
+# http quote api call
+-cmd cd ../../../../
+-cmd cd 06quote/code/
+--next
+build.hxml
+-cmd echo "│ ├── 06quote/code"
+
+# use json
+-cmd cd ../../../../
+-cmd cd 08json/code/
+--next
+build.hxml
+-cmd echo "│ ├── 08json/code"
+
+
+-cmd echo "└── Finished Haxe build"
