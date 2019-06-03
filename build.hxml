@@ -38,10 +38,10 @@ build.hxml
 
 # https nasa api call
 -cmd cd ../../
--cmd cd 04haxelow/code/
+-cmd cd 06nasa/code/
 --next
 build.hxml
--cmd echo "│ ├── 04haxelow/code"
+-cmd echo "│ ├── 06nasa/code"
 
 # http quote api call
 -cmd cd ../../
