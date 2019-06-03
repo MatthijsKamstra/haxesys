@@ -598,20 +598,28 @@
 <ul>
 <li>cpp (C++)</li>
 <li>cs (C#)</li>
-<li>node.js</li>
+<li>node.js (without installing npm packages)</li>
 <li>python</li>
 <li>java</li>
-</ul>
-<p>But Haxe has a couple of more, that probably work exactly the same:</p>
-<ul>
-<li>lua</li>
 <li>neko</li>
+<li>lua (I included lua, but I am sure I didn&apos;t install lua correctly)</li>
+</ul>
+<p>But Haxe has more system targets, that probably work exactly the same:</p>
+<ul>
 <li>macro</li>
 <li>hl (hashlink)</li>
 <li>php</li>
 </ul>
 <p>Practical information how to start are none existing, so I started to document my research.
 I hope this will help. If you think so, why not help with <a href="contribute.html">contribution</a> to this tutorial site.</p>
+<h2 id="nodejs"><a name="nodejs" class="plugin-anchor" href="#nodejs"><i class="fa fa-link" aria-hidden="true"></i></a>Node.js</h2>
+<p>As I mentioned above, I am not going to add node.js to all examples.
+In some cases you need to install packages via npm.
+This is not a difficult process, but not the intention of this tutorial.</p>
+<h2 id="lua"><a name="lua" class="plugin-anchor" href="#lua"><i class="fa fa-link" aria-hidden="true"></i></a>Lua</h2>
+<p>I have added Lua, but honestly: I have no idea what I am doing and why I have Lua installed.
+Some example seem to work with my current install, but I am sure some examples don&apos;t work because I didn&apos;t follow the Lua install instructions.
+So I am sorry in advance.</p>
 <h3 id="how-will-this-help-me"><a name="how-will-this-help-me" class="plugin-anchor" href="#how-will-this-help-me"><i class="fa fa-link" aria-hidden="true"></i></a>How will this help me?</h3>
 <p>It will get you started with C# (Unity) <strong>and</strong> Haxe.
 How to setup your project, install externs and how to work with them. This probably will never be a complete documentation but it will help you get started!</p>
@@ -677,7 +685,7 @@ Although I was already writing everything with markdown, it looked like a good i
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Haxe basics","level":"1.2","depth":1,"path":"haxe/about.md","ref":"haxe/about.md","articles":[{"title":"Quick install","level":"1.2.1","depth":2,"path":"haxe/quick-install.md","ref":"haxe/quick-install.md","articles":[]},{"title":"Installation","level":"1.2.2","depth":2,"path":"haxe/installation.md","ref":"haxe/installation.md","articles":[]},{"title":"Code editor","level":"1.2.3","depth":2,"path":"haxe/choosing-a-code-editor.md","ref":"haxe/choosing-a-code-editor.md","articles":[]},{"title":"Hello world","level":"1.2.4","depth":2,"path":"haxe/hello-world.md","ref":"haxe/hello-world.md","articles":[]},{"title":"Learn Haxe","level":"1.2.5","depth":2,"path":"haxe/learn-haxe.md","ref":"haxe/learn-haxe.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-xxxxxx"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"intro.md","mtime":"2019-05-29T20:15:39.504Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T21:47:15.654Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Haxe basics","level":"1.2","depth":1,"path":"haxe/about.md","ref":"haxe/about.md","articles":[{"title":"Quick install","level":"1.2.1","depth":2,"path":"haxe/quick-install.md","ref":"haxe/quick-install.md","articles":[]},{"title":"Installation","level":"1.2.2","depth":2,"path":"haxe/installation.md","ref":"haxe/installation.md","articles":[]},{"title":"Code editor","level":"1.2.3","depth":2,"path":"haxe/choosing-a-code-editor.md","ref":"haxe/choosing-a-code-editor.md","articles":[]},{"title":"Hello world","level":"1.2.4","depth":2,"path":"haxe/hello-world.md","ref":"haxe/hello-world.md","articles":[]},{"title":"Learn Haxe","level":"1.2.5","depth":2,"path":"haxe/learn-haxe.md","ref":"haxe/learn-haxe.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-xxxxxx"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"intro.md","mtime":"2019-06-03T19:15:35.126Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-03T19:22:48.184Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

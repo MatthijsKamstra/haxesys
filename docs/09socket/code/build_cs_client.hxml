@@ -1,0 +1,11 @@
+-cp src
+-main Client
+-cs bin/cs
+# -debug
+-dce full
+
+--next
+
+# run application
+-cmd cd bin/cs/bin
+-cmd mono Client.exe

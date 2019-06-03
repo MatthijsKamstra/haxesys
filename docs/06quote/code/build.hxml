@@ -4,6 +4,13 @@
 -cmd haxe build_node.hxml
 -cmd echo "  │ ├── python"
 -cmd haxe build_python.hxml
+
+# doesn't work
+# -cmd echo "  │ ├── lua"
+# -cmd haxe build_lua.hxml
+
+-cmd echo "  │ ├── neko"
+-cmd haxe build_neko.hxml
 -cmd echo "  │ ├── cpp"
 -cmd haxe build_cpp.hxml
 -cmd echo "  │ ├── cs"

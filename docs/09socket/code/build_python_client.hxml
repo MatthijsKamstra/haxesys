@@ -1,0 +1,11 @@
+-cp src
+-main Client
+-python bin/python/client.py
+# -debug
+-dce full
+
+--next
+
+# run application
+-cmd cd bin/python
+-cmd python3 client.py
