@@ -1,4 +1,4 @@
-# haxesys
+# Haxe and the system targets
 
 Documentation about using the system targets from Haxe.
 
@@ -6,18 +6,17 @@ The current targets that I have tested is
 
 - cpp (C++)
 - cs (C#)
-- node.js
+- node.js (without installing npm packages)
 - python
 - java
-
-But Haxe has a couple of more, that probably work exactly the same:
-
-- lua
 - neko
-- macro
-- hl (hashlink) 
-- php
+- lua (I included lua, but I am sure I didn't install lua correctly)
 
+But Haxe has more system targets, that probably work exactly the same:
+
+- macro
+- hl (hashlink)
+- php
 
 
 

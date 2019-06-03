@@ -8,20 +8,35 @@ The current targets that I have tested is
 
 - cpp (C++)
 - cs (C#)
-- node.js
+- node.js (without installing npm packages)
 - python
 - java
-
-But Haxe has a couple of more, that probably work exactly the same:
-
-- lua
 - neko
+- lua (I included lua, but I am sure I didn't install lua correctly)
+
+But Haxe has more system targets, that probably work exactly the same:
+
 - macro
 - hl (hashlink)
 - php
 
 Practical information how to start are none existing, so I started to document my research.
 I hope this will help. If you think so, why not help with [contribution](contribute.md) to this tutorial site.
+
+
+## Node.js
+
+As I mentioned above, I am not going to add node.js to all examples.
+In some cases you need to install packages via npm.
+This is not a difficult process, but not the intention of this tutorial.
+
+## Lua
+
+I have added Lua, but honestly: I have no idea what I am doing and why I have Lua installed.
+Some example seem to work with my current install, but I am sure some examples don't work because I didn't follow the Lua install instructions.
+So I am sorry in advance.
+
+
 
 
 ### How will this help me?
