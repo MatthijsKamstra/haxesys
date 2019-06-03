@@ -1,0 +1,16 @@
+Error: Cannot find module 'deasync'
+
+-lib hxnodejs
+
+-cp src
+-main Client
+-js bin/node/client.js
+# -debug
+-dce full
+-D js-es=6
+
+--next
+
+# run application
+-cmd cd bin/node
+-cmd node client.js
