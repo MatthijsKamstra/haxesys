@@ -16,8 +16,6 @@ class Main {
 	var settings:Dynamic; // should make this a typedef
 	// collect all information
 	var writeArr:Array<WriteFile> = [];
-	var postArr:Array<WriteFile> = [];
-	var pageArr:Array<WriteFile> = [];
 
 	function new() {
 		var startTime = Date.now().getTime(); // lets see how fast target really are
@@ -56,13 +54,7 @@ class Main {
 				// get content of the file
 				var fileContent:String = sys.io.File.getContent(folder + "/" + file);
 				// collect
-				var writeFile = new WriteFile(folderName, fileName, fileContent);
-				writeArr.push(writeFile);
-				if (folderName == POSTS) {
-					postArr.push(writeFile);
-				} else {
-					pageArr.push(writeFile);
-				}
+				writeArr.push(new WriteFile(folderName, fileName, fileContent));
 			}
 		}
 	}
@@ -105,8 +97,7 @@ class Main {
 	}
 
 	function createHead():String {
-		var str = '
-		<head>
+		var str = '<head>
 			<!-- Required meta tags -->
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -124,18 +115,7 @@ class Main {
 	 * @return String
 	 */
 	function createNavigation():String {
-		var str = '<header>\n<!-- navigation -->\n<!--';
-		str += '\npages:';
-		for (i in 0...pageArr.length) {
-			var writeFile = pageArr[i];
-			str += '\n\t-  <a href="${writeFile.folderName}/${writeFile.fileName}.html">${writeFile.fileName}</a>';
-		}
-		str += '\nposts:';
-		for (i in 0...postArr.length) {
-			var writeFile = postArr[i];
-			str += '\n\t-  <a href="${writeFile.folderName}/${writeFile.fileName}.html">${writeFile.fileName}</a>';
-		}
-		str += '\n-->\n</header>';
+		var str = '<header>\n<!-- navigation -->\n<header>';
 		return str;
 	}
 
