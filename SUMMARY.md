@@ -23,6 +23,10 @@ This is the summary of my book.
 * [Example http api Quote](06quote/example.md)
 * [Example Json](08json/about.md)
    * [How to](08json/example.md)
+* [Example socket](09socket/about.md)
+   * [How to](09socket/example.md)
+* [Example static site gen](10markdown/about.md)
+   * [How to](10markdown/example.md)
 * [Example hxml](20build/about.md)
    * [How to](20build/example.md)
 * Resources
