@@ -10,10 +10,8 @@
 
 -cmd echo "  │ ├── python"
 -cmd haxe build_python.hxml
-
-# probably didn't install lua correctly
-# -cmd echo "  │ ├── lua"
-# -cmd haxe build_lua.hxml
+-cmd echo "  │ ├── lua"
+-cmd haxe build_lua.hxml
 -cmd echo "  │ ├── neko"
 -cmd haxe build_neko.hxml
 -cmd echo "  │ ├── cpp"

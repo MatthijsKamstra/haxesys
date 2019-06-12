@@ -4,11 +4,8 @@
 -cmd haxe build_node.hxml
 -cmd echo "  │ ├── python"
 -cmd haxe build_python.hxml
-
-# lua not install properly: module 'rex_pcre' not found
-# -cmd echo "  │ ├── lua"
-# -cmd haxe build_lua.hxml
-
+-cmd echo "  │ ├── lua"
+-cmd haxe build_lua.hxml
 -cmd echo "  │ ├── neko"
 -cmd haxe build_neko.hxml
 -cmd echo "  │ ├── cpp"
