@@ -12,7 +12,7 @@ The current targets that I have tested is
 - python
 - java
 - neko
-- lua (I included lua, but I am sure I didn't install lua correctly)
+- lua
 
 But Haxe has more system targets, that probably work exactly the same:
 
