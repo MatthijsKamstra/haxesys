@@ -5,7 +5,7 @@
 -cmd echo "  │ ├── python"
 -cmd haxe build_python.hxml
 
-# doesn't work
+# lua: main.lua:1068: 'until' expected (to close 'repeat' at line 981) near 'end'
 # -cmd echo "  │ ├── lua"
 # -cmd haxe build_lua.hxml
 

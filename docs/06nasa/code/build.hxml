@@ -9,7 +9,8 @@
 # -cmd echo "  │ ├── python"
 # -cmd haxe build_python.hxml
 
-# not implemented or didn't install lua correctly
+# may need to install https package...
+# lua: main.lua:1130: 'until' expected (to close 'repeat' at line 1043) near 'end'
 # -cmd echo "  │ ├── lua"
 # -cmd haxe build_lua.hxml
 
