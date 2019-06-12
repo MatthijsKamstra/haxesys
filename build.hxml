@@ -57,5 +57,27 @@ build.hxml
 build.hxml
 -cmd echo "│ ├── 08json/code"
 
+# sockets
+-cmd cd ../../
+-cmd cd 09socket/code/
+--next
+# doesn't work correctly
+# build.hxml
+-cmd echo "│ ├── 09socket/code"
+
+# markdown
+-cmd cd ../../
+-cmd cd 10markdown/code/
+--next
+build.hxml
+-cmd echo "│ ├── 10markdown/code"
+
+# 11resume
+-cmd cd ../../
+-cmd cd 11resume/code/
+--next
+build.hxml
+-cmd echo "│ ├── 11resume/code"
+
 
 -cmd echo "└── Finished Haxe build"
