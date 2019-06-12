@@ -61,7 +61,7 @@ build.hxml
 -cmd cd ../../
 -cmd cd 09socket/code/
 --next
-# doesn't work correctly
+# doesn't work correctly, needs more love
 # build.hxml
 -cmd echo "│ ├── 09socket/code"
 
@@ -76,8 +76,15 @@ build.hxml
 -cmd cd ../../
 -cmd cd 11resume/code/
 --next
-build.hxml
+build_all.hxml
 -cmd echo "│ ├── 11resume/code"
+
+# 12cli
+-cmd cd ../../
+-cmd cd 12cli/code/
+--next
+build.hxml
+-cmd echo "│ ├── 12cli/code"
 
 
 -cmd echo "└── Finished Haxe build"
