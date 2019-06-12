@@ -2,7 +2,16 @@
 
 Before you can use there are a couple of thing you need to do.
 
-Obviously you need to install Haxe. There are a [couple of ways to do it](../haxe/installation.md), but in this document I will send you to the [official Haxe place](#haxe). After that you need to install `hxcs`-lib via [haxelib](#haxelib) and last but not least [.NET development framework (either Microsoft.NET or Mono)](#cs).
+Obviously you need to install Haxe. There are a [couple of ways to do it](../haxe/installation.md), but in this document I will send you to the [official Haxe place](#haxe).
+
+After that you need to install `hxcs`-lib via [haxelib](#haxelib) and last but not least [.NET development framework (either Microsoft.NET or Mono)](#cs).
+
+
+- Lua
+- neko
+- nodejs
+- python
+- cpp
 
 And a [code editor](#ide) will be useful!
 
@@ -48,6 +57,32 @@ Press that big "Get started"-button and you will get instructions how to proceed
 Perhaps needs to be installed as well? Could be installed with Unity?
 
 Install the latest <a href="https://www.mono-project.com/download/stable/">Mono Compiler</a> <br/>
+
+<a name="lua">
+## Lua
+
+I installed lua on osx with brew
+
+```bash
+brew install lua
+brew install luarocks
+```
+
+And use `luarocks` to install dependency :
+
+```bash
+luarocks install lrexlib-pcre
+luarocks install environ
+luarocks install luasocket
+luarocks install luv
+```
+
+
+For Windows/Linux I would advice you follow the instructions:
+
+- [Lua website](https://www.lua.org/start.html#installing)
+- [Luarocks](https://github.com/luarocks/luarocks/wiki/Download)
+
 
 
 <a name="ide"></a>
