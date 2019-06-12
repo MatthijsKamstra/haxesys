@@ -83,7 +83,7 @@ build_all.hxml
 -cmd cd ../../
 -cmd cd 12cli/code/
 --next
-build.hxml
+build_all.hxml
 -cmd echo "│ ├── 12cli/code"
 
 
