@@ -1,0 +1,15 @@
+-lib hxnodejs
+-lib markdown
+
+-cp src
+-main Main
+-js bin/node/main.js
+# -debug
+-dce full
+-D js-es=6
+
+--next
+
+# run application
+-cmd cd bin/node
+-cmd node main.js
