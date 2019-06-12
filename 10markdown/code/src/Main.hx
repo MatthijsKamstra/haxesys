@@ -20,7 +20,7 @@ class Main {
 	function new() {
 		var startTime = Date.now().getTime(); // lets see how fast target really are
 
-		TARGET = Sys.getCwd().split('code/bin/')[1].split('/')[0]; // yep, that works in this folder structure
+		TARGET = Sys.getCwd().split('bin/')[1].split('/')[0]; // yep, that works in this folder structure
 		EXPORT = Path.normalize(Sys.getCwd().split('bin/')[0] + '/docs/${TARGET}'); // normal situation this would we just the `www` or `docs` folder
 		ASSETS = Path.normalize(Sys.getCwd().split('bin/')[0] + '/assets/');
 
