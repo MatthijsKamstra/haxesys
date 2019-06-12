@@ -29,6 +29,8 @@ This is the summary of my book.
    * [How to](10markdown/example.md)
 * [Example resume](11resume/about.md)
    * [How to](11resume/example.md)
+* [Example cli](12cli/about.md)
+   * [How to](12cli/example.md)
 * [Example hxml](20build/about.md)
    * [How to](20build/example.md)
 * Resources
