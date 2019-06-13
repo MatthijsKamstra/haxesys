@@ -1,11 +1,17 @@
 -cmd echo "  ├─┬ Start building targets"
 
--cmd echo "  │ ├── node"
--cmd haxe build_node.hxml
+# ReferenceError: sys is not defined
+# -cmd echo "  │ ├── node"
+# -cmd haxe build_node.hxml
 -cmd echo "  │ ├── python"
 -cmd haxe build_python.hxml
--cmd echo "  │ ├── lua"
--cmd haxe build_lua.hxml
+
+# not sure what happens with lua, most command just work..
+# Error: Command failed with error -10
+# Error: Command failed with error 1
+# -cmd echo "  │ ├── lua"
+# -cmd haxe build_lua.hxml
+
 -cmd echo "  │ ├── neko"
 -cmd haxe build_neko.hxml
 -cmd echo "  │ ├── cpp"

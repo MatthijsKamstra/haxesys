@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../11resume/about.html" />
+    <link rel="next" href="../20build/about.html" />
     
     
     <link rel="prev" href="about.html" />
@@ -438,9 +438,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="about.html">
+        <li class="chapter " data-level="1.12" data-path="../10markdown/about.html">
             
-                <a href="about.html">
+                <a href="../10markdown/about.html">
             
                     
                     Example static site gen
@@ -452,9 +452,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.12.1" data-path="example.html">
+        <li class="chapter " data-level="1.12.1" data-path="../10markdown/example.html">
             
-                <a href="example.html">
+                <a href="../10markdown/example.html">
             
                     
                     How to
@@ -534,9 +534,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="../13terminal/about.html">
+        <li class="chapter " data-level="1.15" data-path="about.html">
             
-                <a href="../13terminal/about.html">
+                <a href="about.html">
             
                     
                     Example terminal
@@ -548,9 +548,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.15.1" data-path="../13terminal/example.html">
+        <li class="chapter active" data-level="1.15.1" data-path="example.html">
             
-                <a href="../13terminal/example.html">
+                <a href="example.html">
             
                     
                     How to
@@ -753,44 +753,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="example"><a name="example" class="plugin-anchor" href="#example"><i class="fa fa-link" aria-hidden="true"></i></a>Example</h1>
-<p>Essentially this is just a simple reading and writing example.
-Simply write and read a file.</p>
+                                <h1 id="example-clicommand"><a name="example-clicommand" class="plugin-anchor" href="#example-clicommand"><i class="fa fa-link" aria-hidden="true"></i></a>Example CLI/command</h1>
+<p>Check the <a href="../code">code folder</a> for more comments.</p>
 <h2 id="how-to-start"><a name="how-to-start" class="plugin-anchor" href="#how-to-start"><i class="fa fa-link" aria-hidden="true"></i></a>How to start</h2>
-<p>Create a folder named <strong>foobar</strong> (please use a better name; any name will do) and create folders <strong>bin</strong> and <strong>src</strong>.
+<p>Create a folder named <strong>foobar</strong> (please use a better name; any name will do) and create folders <strong>assets</strong> and <strong>src</strong>.
 See example below:</p>
 <pre><code>+ foobar
-    + assets
-        + pages
-        + posts
-            - emphasis.md
-            - headers.md
-        - home.md
     + bin
     + src
         - Main.hx
     - build.hxml
 </code></pre><h2 id="the-mainhx"><a name="the-mainhx" class="plugin-anchor" href="#the-mainhx"><i class="fa fa-link" aria-hidden="true"></i></a>The Main.hx</h2>
-<p>Open your favorite editor, copy/paste the code and save it in the <code>src</code> folder.</p>
-<pre><code>class Main {
-    function new(){
-        trace(&quot;Reading and writing example&quot;);
+<pre><code class="lang-haxe"><span class="hljs-comment">// create a file</span>
+Sys.command(<span class="hljs-string">&apos;touch&apos;</span>, [<span class="hljs-string">&apos;readme.md&apos;</span>]);
+</code></pre>
+<p>Creates a file with the name &quot;readme.md&quot;</p>
+<pre><code class="lang-haxe"><span class="hljs-comment">// print a message on the screen</span>
+Sys.println(<span class="hljs-string">&quot;lets see if you have ffmpeg installed&quot;</span>);
+<span class="hljs-keyword">var</span> p:Process = <span class="hljs-keyword">new</span> Process(<span class="hljs-string">&apos;ffmpeg&apos;</span>, [<span class="hljs-string">&apos;-version&apos;</span>]);
+<span class="hljs-keyword">var</span> out = p.stdout.readAll().toString();
+p.close();
 
-        var str:String = &apos;Writing and reading a simple text file.!\nWritten on: &apos; + Date.now().toString();
-
-        // write the file
-        sys.io.File.saveContent(&apos;hello.txt&apos;, str);
-
-        // read the file
-        var content = sys.io.File.getContent(&apos;hello.txt&apos;);
-        trace (content);
-    }
-
-    static public function main() {
-        var main = new Main();
-    }
+<span class="hljs-keyword">if</span>(out.indexOf(<span class="hljs-string">&apos;ffmpeg version&apos;</span>) != <span class="hljs-number">-1</span>){
+    <span class="hljs-keyword">trace</span>(<span class="hljs-string">&apos;You have ffmpeg installed!&apos;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">trace</span>(<span class="hljs-string">&apos;Visit ffmpeg.org to install!&apos;</span>);
 }
-</code></pre><h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
+</code></pre>
+<p>sort of trying to read if you have ffmpeg installed via <code>ffmpeg -version</code> asking the version of the installed programm</p>
+<h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
 <p>I use one <a href="../code/build.hxml"><code>build.hxml</code></a> to build all other build files:</p>
 <ul>
 <li>build_cpp.hxml</li>
@@ -835,12 +826,12 @@ See example below:</p>
 
             
                 
-                <a href="about.html" class="navigation navigation-prev " aria-label="Previous page: Example static site gen">
+                <a href="about.html" class="navigation navigation-prev " aria-label="Previous page: Example terminal">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../11resume/about.html" class="navigation navigation-next " aria-label="Next page: Example resume">
+                <a href="../20build/about.html" class="navigation navigation-next " aria-label="Next page: Example hxml">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -851,7 +842,7 @@ See example below:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.12.1","depth":2,"next":{"title":"Example resume","level":"1.13","depth":1,"path":"11resume/about.md","ref":"11resume/about.md","articles":[{"title":"How to","level":"1.13.1","depth":2,"path":"11resume/example.md","ref":"11resume/example.md","articles":[]}]},"previous":{"title":"Example static site gen","level":"1.12","depth":1,"path":"10markdown/about.md","ref":"10markdown/about.md","articles":[{"title":"How to","level":"1.12.1","depth":2,"path":"10markdown/example.md","ref":"10markdown/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10markdown/example.md","mtime":"2019-06-10T21:07:48.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-13T11:01:51.334Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.15.1","depth":2,"next":{"title":"Example hxml","level":"1.16","depth":1,"path":"20build/about.md","ref":"20build/about.md","articles":[{"title":"How to","level":"1.16.1","depth":2,"path":"20build/example.md","ref":"20build/example.md","articles":[]}]},"previous":{"title":"Example terminal","level":"1.15","depth":1,"path":"13terminal/about.md","ref":"13terminal/about.md","articles":[{"title":"How to","level":"1.15.1","depth":2,"path":"13terminal/example.md","ref":"13terminal/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"13terminal/example.md","mtime":"2019-06-13T10:56:51.544Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-13T11:01:51.334Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

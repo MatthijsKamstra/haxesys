@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>How to · GitBook</title>
+        <title>Example terminal · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../11resume/about.html" />
+    <link rel="next" href="example.html" />
     
     
-    <link rel="prev" href="about.html" />
+    <link rel="prev" href="../12cli/example.html" />
     
 
     </head>
@@ -438,9 +438,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="about.html">
+        <li class="chapter " data-level="1.12" data-path="../10markdown/about.html">
             
-                <a href="about.html">
+                <a href="../10markdown/about.html">
             
                     
                     Example static site gen
@@ -452,9 +452,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.12.1" data-path="example.html">
+        <li class="chapter " data-level="1.12.1" data-path="../10markdown/example.html">
             
-                <a href="example.html">
+                <a href="../10markdown/example.html">
             
                     
                     How to
@@ -534,9 +534,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="../13terminal/about.html">
+        <li class="chapter active" data-level="1.15" data-path="about.html">
             
-                <a href="../13terminal/about.html">
+                <a href="about.html">
             
                     
                     Example terminal
@@ -548,9 +548,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.15.1" data-path="../13terminal/example.html">
+        <li class="chapter " data-level="1.15.1" data-path="example.html">
             
-                <a href="../13terminal/example.html">
+                <a href="example.html">
             
                     
                     How to
@@ -738,7 +738,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >How to</a>
+        <a href=".." >Example terminal</a>
     </h1>
 </div>
 
@@ -753,61 +753,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="example"><a name="example" class="plugin-anchor" href="#example"><i class="fa fa-link" aria-hidden="true"></i></a>Example</h1>
-<p>Essentially this is just a simple reading and writing example.
-Simply write and read a file.</p>
-<h2 id="how-to-start"><a name="how-to-start" class="plugin-anchor" href="#how-to-start"><i class="fa fa-link" aria-hidden="true"></i></a>How to start</h2>
-<p>Create a folder named <strong>foobar</strong> (please use a better name; any name will do) and create folders <strong>bin</strong> and <strong>src</strong>.
-See example below:</p>
-<pre><code>+ foobar
-    + assets
-        + pages
-        + posts
-            - emphasis.md
-            - headers.md
-        - home.md
-    + bin
-    + src
-        - Main.hx
-    - build.hxml
-</code></pre><h2 id="the-mainhx"><a name="the-mainhx" class="plugin-anchor" href="#the-mainhx"><i class="fa fa-link" aria-hidden="true"></i></a>The Main.hx</h2>
-<p>Open your favorite editor, copy/paste the code and save it in the <code>src</code> folder.</p>
-<pre><code>class Main {
-    function new(){
-        trace(&quot;Reading and writing example&quot;);
-
-        var str:String = &apos;Writing and reading a simple text file.!\nWritten on: &apos; + Date.now().toString();
-
-        // write the file
-        sys.io.File.saveContent(&apos;hello.txt&apos;, str);
-
-        // read the file
-        var content = sys.io.File.getContent(&apos;hello.txt&apos;);
-        trace (content);
-    }
-
-    static public function main() {
-        var main = new Main();
-    }
-}
-</code></pre><h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
-<p>I use one <a href="../code/build.hxml"><code>build.hxml</code></a> to build all other build files:</p>
+                                <h1 id="about-terminal"><a name="about-terminal" class="plugin-anchor" href="#about-terminal"><i class="fa fa-link" aria-hidden="true"></i></a>About Terminal</h1>
+<p>Nice thing about the system targets is that it&apos;s connected to the computer and so you can do stuff that the computer does as well.</p>
+<p>You can start <a href="https://ffmpeg.org/" target="_blank">ffmpeg</a> if it&apos;s installed on your computer.</p>
+<p>Example code:</p>
+<pre><code class="lang-bash">ffmpeg -i input.mp4 output.avi
+</code></pre>
+<p>So your program could generate a sequence images, that you could convert to a <code>.mp4</code> and convert that to a <code>.avi</code>.</p>
+<h2 id="cli"><a name="cli" class="plugin-anchor" href="#cli"><i class="fa fa-link" aria-hidden="true"></i></a>CLI</h2>
+<p>CLI = Command Line Interface</p>
+<p>Old skool way to access your computer.
+Usually via terminal.</p>
+<p>Because you need to have access to the computer it will only work on the system targets</p>
+<p>Just a short reminder:</p>
 <ul>
-<li>build_cpp.hxml</li>
-<li>build_cs.hxml</li>
-<li>build_java.hxml</li>
-<li>build_node.hxml</li>
-<li>build_python.hxml</li>
+<li>cpp (C++)</li>
+<li>cs (C#)</li>
+<li>node.js (without installing npm packages)</li>
+<li>python</li>
+<li>java</li>
+<li>neko</li>
+<li>lua</li>
 </ul>
-<p>Check out the files in the <a href="../code"><code>/code</code></a>-folder.</p>
-<h2 id="build-all-targets-with-haxe-and-start-the-specific-target"><a name="build-all-targets-with-haxe-and-start-the-specific-target" class="plugin-anchor" href="#build-all-targets-with-haxe-and-start-the-specific-target"><i class="fa fa-link" aria-hidden="true"></i></a>Build all targets with Haxe and start the specific target</h2>
-<p>To finish and see what we have, build the file and see the result</p>
-<ol>
-<li>Open your terminal</li>
-<li><code>cd</code> to the correct folder where you have saved the <code>build.hxml</code></li>
-<li>type <code>haxe build.hxml</code></li>
-<li>press enter</li>
-</ol>
+<h2 id="haxe-documentation"><a name="haxe-documentation" class="plugin-anchor" href="#haxe-documentation"><i class="fa fa-link" aria-hidden="true"></i></a>haxe documentation</h2>
+<blockquote>
+<p>Run the given command. The command output will be printed on the same output as the current process. The current process will block until the command terminates and it will return the command result (0 if there was no error).</p>
+<p>Command arguments can be passed in two ways: 1. using args, 2. appending to cmd and leaving args as null.</p>
+<p>When using args to pass command arguments, each argument will be automatically quoted, and shell meta-characters will be escaped if needed. cmd should be an executable name that can be located in the PATH environment variable, or a path to an executable.</p>
+<p>When args is not given or is null, command arguments can be appended to cmd. No automatic quoting/escaping will be performed. cmd should be formatted exactly as it would be when typed at the command line. It can run executables, as well as shell commands that are not executables (e.g. on Windows: dir, cd, echo etc).</p>
+<p>Read the <a href="https://api.haxe.org/sys/io/Process.html" target="_blank">sys.io.Process</a> api for a more complete way to start background processes.</p>
+</blockquote>
+<ul>
+<li><a href="https://api.haxe.org/sys/io/Process.html" target="_blank">https://api.haxe.org/sys/io/Process.html</a></li>
+<li><a href="https://api.haxe.org/Sys.html#command" target="_blank">https://api.haxe.org/Sys.html#command</a></li>
+<li><a href="https://guide.freecodecamp.org/bash" target="_blank">https://guide.freecodecamp.org/bash</a></li>
+</ul>
 
                                 
                                 </section>
@@ -835,12 +815,12 @@ See example below:</p>
 
             
                 
-                <a href="about.html" class="navigation navigation-prev " aria-label="Previous page: Example static site gen">
+                <a href="../12cli/example.html" class="navigation navigation-prev " aria-label="Previous page: How to">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../11resume/about.html" class="navigation navigation-next " aria-label="Next page: Example resume">
+                <a href="example.html" class="navigation navigation-next " aria-label="Next page: How to">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -851,7 +831,7 @@ See example below:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.12.1","depth":2,"next":{"title":"Example resume","level":"1.13","depth":1,"path":"11resume/about.md","ref":"11resume/about.md","articles":[{"title":"How to","level":"1.13.1","depth":2,"path":"11resume/example.md","ref":"11resume/example.md","articles":[]}]},"previous":{"title":"Example static site gen","level":"1.12","depth":1,"path":"10markdown/about.md","ref":"10markdown/about.md","articles":[{"title":"How to","level":"1.12.1","depth":2,"path":"10markdown/example.md","ref":"10markdown/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10markdown/example.md","mtime":"2019-06-10T21:07:48.619Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-13T11:01:51.334Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Example terminal","level":"1.15","depth":1,"next":{"title":"How to","level":"1.15.1","depth":2,"path":"13terminal/example.md","ref":"13terminal/example.md","articles":[]},"previous":{"title":"How to","level":"1.14.1","depth":2,"path":"12cli/example.md","ref":"12cli/example.md","articles":[]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"13terminal/about.md","mtime":"2019-06-13T10:54:06.971Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-13T11:01:51.334Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
