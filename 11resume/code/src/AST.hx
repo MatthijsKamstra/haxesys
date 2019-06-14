@@ -28,134 +28,120 @@ package;
  * 		Skills
  * 		Publications
  */
-
-typedef Resume = {
-	var basics : Basics;
-	var work : Work;
-	var volunteer : Volunteer;
-	var education : Education;
-	var awards : Awards;
-	var publications : Publications;
-	var skills : Skills;
-	var languages : Languages;
-	var interests : Interests;
-	var references : References;
-}
-
-typedef Location =
-{
-	var city : String;
-	var postalCode : String;
-	var countryCode : String;
-	var region : String;
-	var address : String;
+typedef ResumeObjObj = {
+	var education:Array<Education>;
+	var work:Array<Work>;
+	var basics:Basics;
+	var languages:Array<Languages>;
+	var skills:Array<Skills>;
+	var volunteer:Array<Volunteer>;
+	var awards:Array<Awards>;
+	var references:Array<References>;
+	var publications:Array<Publications>;
+	var interests:Array<Interests>;
 };
 
-typedef Work =
-{
-	var position : String;
-	var website : String;
-	var highlights : Array<String>;
-	var startDate : String;
-	var summary : String;
-	var company : String;
-	var endDate : String;
+// typedef Resume = {
+// 	var basics : Basics;
+// 	var work : Work;
+// 	var volunteer : Volunteer;
+// 	var education : Education;
+// 	var awards : Awards;
+// 	var publications : Publications;
+// 	var skills : Skills;
+// 	var languages : Languages;
+// 	var interests : Interests;
+// 	var references : References;
+// }
+
+typedef Location = {
+	var city:String;
+	var postalCode:String;
+	var countryCode:String;
+	var region:String;
+	var address:String;
 };
 
-typedef Languages =
-{
-	var fluency : String;
-	var language : String;
+typedef Work = {
+	var position:String;
+	var website:String;
+	var highlights:Array<String>;
+	var startDate:String;
+	var summary:String;
+	var company:String;
+	var endDate:String;
 };
 
-typedef References =
-{
-	var name : String;
-	var reference : String;
+typedef Languages = {
+	var fluency:String;
+	var language:String;
 };
 
-typedef Interests =
-{
-	var name : String;
-	var keywords : Array<String>;
+typedef References = {
+	var name:String;
+	var reference:String;
 };
 
-typedef ResumeObjObj =
-{
-	var education : Array<Education>;
-	var work : Array<Work>;
-	var basics : Basics;
-	var languages : Array<Languages>;
-	var skills : Array<Skills>;
-	var volunteer : Array<Volunteer>;
-	var awards : Array<Awards>;
-	var references : Array<References>;
-	var publications : Array<Publications>;
-	var interests : Array<Interests>;
+typedef Interests = {
+	var name:String;
+	var keywords:Array<String>;
 };
 
-typedef Profiles =
-{
-	var network : String;
-	var url : String;
-	var username : String;
+typedef Profiles = {
+	var network:String;
+	var url:String;
+	var username:String;
 };
 
-typedef Volunteer =
-{
-	var organization : String;
-	var position : String;
-	var website : String;
-	var highlights : Array<String>;
-	var startDate : String;
-	var summary : String;
-	var endDate : String;
+typedef Volunteer = {
+	var organization:String;
+	var position:String;
+	var website:String;
+	var highlights:Array<String>;
+	var startDate:String;
+	var summary:String;
+	var endDate:String;
 };
 
-typedef Awards =
-{
-	var date : String;
-	var awarder : String;
-	var summary : String;
-	var title : String;
+typedef Awards = {
+	var date:String;
+	var awarder:String;
+	var summary:String;
+	var title:String;
 };
 
-typedef Education =
-{
-	var area : String;
-	var institution : String;
-	var startDate : String;
-	var gpa : String;
-	var studyType : String;
-	var courses : Array<String>;
-	var endDate : String;
+typedef Education = {
+	var area:String;
+	var institution:String;
+	var startDate:String;
+	var gpa:String;
+	var studyType:String;
+	var courses:Array<String>;
+	var endDate:String;
 };
 
-typedef Basics =
-{
-	var phone : String;
-	var name : String;
-	var location : Location;
-	var profiles : Array<Profiles>;
-	var label : String;
-	var email : String;
-	var website : String;
-	var picture : String;
-	var summary : String;
+typedef Basics = {
+	var phone:String;
+	var name:String;
+	var location:Location;
+	var profiles:Array<Profiles>;
+	var label:String;
+	var email:String;
+	var website:String;
+	var picture:String;
+	var summary:String;
 };
 
-typedef Skills =
-{
-	var name : String;
-	var level : String;
-	var keywords : Array<String>;
+typedef Skills = {
+	var name:String;
+	var level:String;
+	var keywords:Array<String>;
 };
 
-typedef Publications =
-{
-	var publisher : String;
-	var name : String;
-	var releaseDate : String;
-	var website : String;
-	var summary : String;
+typedef Publications = {
+	var publisher:String;
+	var name:String;
+	var releaseDate:String;
+	var website:String;
+	var summary:String;
 };
