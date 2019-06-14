@@ -1,4 +1,4 @@
-# About resume
+# About resume.json
 
 A couple years back I ran into this project <https://jsonresume.org/>
 
@@ -8,17 +8,17 @@ A couple years back I ran into this project <https://jsonresume.org/>
 It seemed a good idea but I had no use for it.
 
 
-Resently a collugue of mine needed a resume and I remembered this.
+Recently a colleague of mine needed a resume and I remembered this.
 Now the project seems dead and most of the website is not working.
 
-I still think it's a great idea, so I wanted to expermint with it.
+I still think it's a great idea, so I wanted to experiment with it.
 
 After working with it, I only can say that it's a good idea. But currently it doesn't work properly.
 
 
-Currenly it's written in node.js and JavaScript.
+Currently it's written in node.js and JavaScript.
 
-We can probably do that better witth Haxe!
+We can probably do that better with Haxe!
 So let's start a Haxe system variant for it.
 
 
