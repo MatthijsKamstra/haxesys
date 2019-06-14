@@ -7,7 +7,7 @@ using StringTools;
 
 class Main {
 	// resume data
-	var json:Resume;
+	var json:ResumeObjObj;
 	// defaults
 	var TARGET:String; // current target (neko, node.js, c++, c#, python, java)
 	var ASSETS:String; // root folder of the website
@@ -43,14 +43,17 @@ class Main {
 		writeTxt(); // first txt, because markdown modifice __txt (need to fix that)
 		writeMarkdown();
 		writeHtml();
+
+		// trace(AST.ResumeObjObj);
 	}
 
 	function writeOut() {
+		// collect all the first level names of the nodes
 		__arr = [];
 		for (varName in Reflect.fields(json)) {
 			__arr.push(capitalizeFirstLetter(varName));
 		}
-
+		// reset __txt and unwrap
 		__txt = '';
 		unwrapJson(json, '');
 	}
@@ -60,15 +63,19 @@ class Main {
 		str += '## ${json.basics.label}\n';
 		str += '\n';
 
-		// [mck] here some quick and dirty string manipulation
-		__txt = __txt.replace('\t\t', '**- '); // convert the dubble tab
-		__txt = __txt.replace('\t', '- '); // convert tab to list
-		__txt = __txt.replace('**- ', '\t- '); // convert the dubble tab to dubble tab list
-
+		// [mck] okay, this is little bit hacky, but it works
+		// fix top level names
 		for (i in 0...__arr.length) {
 			var r = __arr[i];
-			__txt = __txt.replace(r, '\n### ${r}\n'); // convert the dubble tab to dubble tab list
+			__txt = __txt.replace(r, '\n### ${r}::'); // convert to a h3 but add some extras so we can remove that in the next replace
 		}
+		// [mck] here some quick and dirty string manipulation
+		__txt = __txt.replace(':::', '\n'); // created in the replace above and removed here
+		__txt = __txt.replace('\t\t', '**- '); // convert the double tab
+		__txt = __txt.replace('\t', '- **'); // convert tab to list
+		__txt = __txt.replace('**- ', '\t- **'); // convert the double tab to dubble tab list
+		__txt = __txt.replace(': ', ':** '); // create bold in combintaion with previous replace
+
 
 		str += __txt;
 
@@ -126,7 +133,7 @@ class Main {
 
 			switch (Type.typeof(Reflect.field(json, varName))) {
 				case TObject:
-					__txt += '${tab}${capitalizeFirstLetter(varName)}\n';
+					__txt += '${tab}${capitalizeFirstLetter(varName)}: \n';
 					// deeper into the rabit hole
 					// trace('object : ${varName}');
 					unwrapJson(Reflect.field(json, varName), tab + '\t');
@@ -136,7 +143,7 @@ class Main {
 					__txt += '${tab}${capitalizeFirstLetter(varName)}: ${Reflect.field(json, varName)}\n';
 
 				case TClass(Array):
-					__txt += '${tab}${capitalizeFirstLetter(varName)}\n';
+					__txt += '${tab}${capitalizeFirstLetter(varName)}: \n';
 					// trace('array : ${varName}');
 					// trace('array : ${varName} : ${Reflect.field(json, varName)}');
 					var arr:Array<Dynamic> = Reflect.field(json, varName);
