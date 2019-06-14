@@ -1,12 +1,22 @@
-# Example json
+# Example resume.json
 
-I have created the [user.json](https://github.com/MatthijsKamstra/haxeunity/tree/master/08json/code/bin/www/assets/users.json) with <http://jsonplaceholder.typicode.com/users>.
+I have created [resume.json](https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/assets/resume.json) via the npm from <https://jsonresume.org/>
+
+```
+npm install -g resume-cli
+```
+
+And created a "empty" resume.json
+
+```
+resume init
+```
 
 
-Check the [code folder](https://github.com/MatthijsKamstra/haxeunity/tree/master/08json/code) for more comments.
+Check the [code folder](https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code) for more comments.
 
 In this example we are going to read and use a `.json` file.
-
+We will convert the json to `.md`, `.txt` and some basic `.html`
 
 
 ## How to start
@@ -17,7 +27,7 @@ See example below:
 ```
 + foobar
 	+ assets
-		- users.json
+		- resume.json
 	+ bin
 	+ src
 		- Main.hx
@@ -28,17 +38,20 @@ See example below:
 
 ## The Main.hx
 
-This example is getting to big to post here, so if you want to check out the complete file go and check out [Main.hx](https://github.com/MatthijsKamstra/haxeunity/tree/master/08json/code/Main.hx)
+This example is getting to big to post here, so if you want to check out the complete file go and check out [Main.hx](https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/Main.hx)
 
 So the first part of this code is loading the `json` file:
 
 ```
-var path = Path.normalize(Sys.getCwd().split('bin/')[0] + '/assets/users.json');
+var path = Path.normalize(ASSETS + '/resume.json');
 
-if(sys.FileSystem.exists(path)){
-	var str : String = sys.io.File.getContent(path);
+if (sys.FileSystem.exists(path)) {
+	var str:String = sys.io.File.getContent(path);
+	json = haxe.Json.parse(str);
+	trace("json.basics.name: " + json.basics.name);
+	writeAll();
 } else {
-	trace ('ERROR: there is not file: $path');
+	trace('ERROR: there is no spoon: $path');
 }
 ```
 
@@ -46,53 +59,31 @@ convert data (String) to a `json` file:
 <http://api.haxe.org/haxe/Json.html>
 
 ```haxe
-	// trace('str: $str');
-	json = haxe.Json.parse(str);
-```
-
-And then it's possible to convert the `json` to usable input:
-
-```haxe
-for (i in 0 ... json.length)
-{
-	var _user = json[i];
-	trace ( "Name: " + _user.name );
-}
-
+var json:ResumeObjObj = haxe.Json.parse(str);
 ```
 
 To make that easier I use [`typedef`](http://haxe.org/manual/type-system-typedef.html)
 
-We convert the json data to `User` so when we use a IDE it will use autocompletion
+We convert the json data to `ResumeObjObj` so when we use a IDE it will use autocompletion
+
+Check out [AST.hx](https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/AST.hx), it's too big to show it all here.
+
+But the "toplevel" you can see the basic structure of resume.json
 
 ```haxe
-typedef User =
-{
-	var id : Int; // 1
-	var name : String; // Leanne Graham
-	var username : String; // Bret
-	var email : String; // Sincere@april.biz
-	var address : {
-	  	var street : String; // Kulas Light
-	  	var suite : String; // Apt. 556
-	  	var city : String; // Gwenborough
-	  	var zipcode : String; // 92998-3874
-	  	var geo : {
-	    	var lat : String; // -37.3159
-	    	var lng : String; // 81.1496
-	      };
-	};
-	var phone : String; // 1-770-736-8031 x56442
-	var website : String; // hildegard.org
-	var company : {
-	  	var name : String; // Romaguera-Crona
-	  	var catchPhrase : String; // Multi-layered client-server neural-net
-	  	var bs : String; // harness real-time e-markets
-    };
-}
-
+typedef ResumeObjObj = {
+	var education:Array<Education>;
+	var work:Array<Work>;
+	var basics:Basics;
+	var languages:Array<Languages>;
+	var skills:Array<Skills>;
+	var volunteer:Array<Volunteer>;
+	var awards:Array<Awards>;
+	var references:Array<References>;
+	var publications:Array<Publications>;
+	var interests:Array<Interests>;
+};
 ```
-
 
 
 ## The Haxe build file, build.hxml
