@@ -1,0 +1,24 @@
+-cmd echo "  ├─┬ Start building targets"
+
+# Error: ENOTSUP: operation not supported on socket, fsync
+# -cmd echo "  │ ├── node"
+# -cmd haxe build_node.hxml
+
+# python string doesn't clean up + fill doesn't work
+# -cmd echo "  │ ├── python"
+# -cmd haxe build_python.hxml
+
+# works but never shows the progress (only 100% progressbar)
+# -cmd echo "  │ ├── lua"
+# -cmd haxe build_lua.hxml
+#
+-cmd echo "  │ ├── neko"
+-cmd haxe build_neko.hxml
+-cmd echo "  │ ├── cpp"
+-cmd haxe build_cpp.hxml
+-cmd echo "  │ ├── cs"
+-cmd haxe build_cs.hxml
+-cmd echo "  │ ├── java"
+-cmd haxe build_java.hxml
+
+-cmd echo "  └── Finished building targets"

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Example Writing · GitBook</title>
+        <title>Example ProgressBar · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../02reading/example.html" />
+    <link rel="next" href="../20build/about.html" />
     
     
-    <link rel="prev" href="../00helloworld/example.html" />
+    <link rel="prev" href="../13terminal/example.html" />
     
 
     </head>
@@ -271,9 +271,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="example.html">
+        <li class="chapter " data-level="1.5" data-path="../01writing/example.html">
             
-                <a href="example.html">
+                <a href="../01writing/example.html">
             
                     
                     Example Writing
@@ -566,9 +566,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.16" data-path="../14cli_progress/example.html">
+        <li class="chapter active" data-level="1.16" data-path="example.html">
             
-                <a href="../14cli_progress/example.html">
+                <a href="example.html">
             
                     
                     Example ProgressBar
@@ -751,7 +751,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Example Writing</a>
+        <a href=".." >Example ProgressBar</a>
     </h1>
 </div>
 
@@ -766,11 +766,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="writing-example"><a name="writing-example" class="plugin-anchor" href="#writing-example"><i class="fa fa-link" aria-hidden="true"></i></a>Writing example</h1>
-<p>Simple write to a file. Can&apos;t make it more glamours.
-In this example we will use Haxe specific code that can be used for other <code>sys</code> targets (lua, python, neko, cpp, hl, php, java, cs) as well.</p>
+                                <h1 id="example-cli---progressbar"><a name="example-cli---progressbar" class="plugin-anchor" href="#example-cli---progressbar"><i class="fa fa-link" aria-hidden="true"></i></a>Example CLI - ProgressBar</h1>
+<p>This is really silly, but a lot of fun to figure out.</p>
+<p>I wanted to have a progressBar in my cli, and you can for most languages.</p>
+<p>I say most, but not everything works like I would expect and I haven&apos;t fixed it for the languages.</p>
+<p>You want to know more about the languages that currently don&apos;t work (or don&apos;t work properly) check out the <a href="../code/build_all.hxml"><code>build_all.hxml</code></a></p>
+<p>For now node.js fails: <code>Error: ENOTSUP: operation not supported on socket, fsync</code> which is weird... why do I need a socket (need to investigate)
+Python works, but not like the other targets: the string is prepent to the cli and thus becomes really long (and doesn&apos;t work anymore) + the fill is not known in Python (might be fixed in Haxe4)
+Lua works, but never shows an update. It waits and only shows the 100% bar.</p>
+<p>Check the <a href="../code">code folder</a> for more comments.</p>
 <h2 id="how-to-start"><a name="how-to-start" class="plugin-anchor" href="#how-to-start"><i class="fa fa-link" aria-hidden="true"></i></a>How to start</h2>
-<p>Create a folder named <strong>foobar</strong> (please use a better name; any name will do) and create folders <strong>bin</strong> and <strong>src</strong>.
+<p>Create a folder named <strong>foobar</strong> (please use a better name; any name will do) and create folders <strong>assets</strong> and <strong>src</strong>.
 See example below:</p>
 <pre><code>+ foobar
     + bin
@@ -778,36 +784,69 @@ See example below:</p>
         - Main.hx
     - build.hxml
 </code></pre><h2 id="the-mainhx"><a name="the-mainhx" class="plugin-anchor" href="#the-mainhx"><i class="fa fa-link" aria-hidden="true"></i></a>The Main.hx</h2>
-<p>Open your favorite editor, copy/paste the code and save it in the <code>src</code> folder.</p>
-<pre><code>import sys.io.File;
-class Main {
-    function new() {
-        trace(&apos;Writing example&apos;);
-
-        var str:String = &apos;Hello World!\nWritten on: &apos; + Date.now().toString();
-        sys.io.File.saveContent(&apos;hello.txt&apos;, str);
+<p>You probably can figure out how it would work so check out <a href="code/src/Main.hx">Main.hx</a></p>
+<p>The progressBar expects two values: the current value (an <code>Int</code>) and the total (also an <code>Int</code>)</p>
+<pre><code class="lang-haxe">
+    <span class="hljs-comment">/**
+     * |&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;&#x2588;-----| 90.0%
+     *
+     * @param  current         progress value
+     * @param  total           total value
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">progressBar</span><span class="hljs-params">(current:Int, total:Int)</span></span>{
+        <span class="hljs-keyword">var</span> _fill = <span class="hljs-string">&apos;&#x2588;&apos;</span>;
+        <span class="hljs-keyword">var</span> _current = <span class="hljs-string">&apos;&apos;</span>;
+        <span class="hljs-keyword">var</span> _rest = <span class="hljs-string">&apos;&apos;</span>;
+        <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span>..current){
+            _current += _fill;
+        }
+        <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span>..(total-current)){
+            _rest += <span class="hljs-string">&apos;-&apos;</span>;
+        }
+        <span class="hljs-keyword">var</span> progress = <span class="hljs-string">&apos;|${_current}${_rest}| ${Std.int((current/total)*100)}%&apos;</span>;
+        Sys.stdout().writeString (<span class="hljs-string">&apos;\r&apos;</span>+progress);
+        Sys.stdout().flush();
     }
-
-    static public function main() {
-        var main = new Main();
+</code></pre>
+<p>To start showing this progessBar I use this code, which has not value besides showing how the progressbar looks.</p>
+<pre><code class="lang-haxe">    <span class="hljs-keyword">var</span> total = <span class="hljs-number">50</span>;
+    <span class="hljs-keyword">var</span> current = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span>..total){
+        Sys.sleep(<span class="hljs-number">0.1</span>);
+        current++;
+        progressBar(current,total);
     }
-}
-</code></pre><h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
-<p>I use one <a href="../code/build.hxml"><code>build.hxml</code></a> to build all other build files:</p>
+</code></pre>
+<h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
+<p>Normally you would have one <code>build.hxml</code> that would build everything you want to transpile to.
+So you could build with one file many backends.</p>
+<p>But not every feature works automaticly in all the languages and to prevent it from building I decided to have a little different structure.</p>
+<p>Currently I use <a href="../code/build.hxml"><code>build.hxml</code></a> for vscode syntax checking:</p>
+<pre><code class="lang-bash">-lib markdown
+-cp src
+-D analyzer-optimize
+-main Main
+--interp
+</code></pre>
+<p>And have individual build files for the different targets:</p>
 <ul>
 <li>build_cpp.hxml</li>
 <li>build_cs.hxml</li>
 <li>build_java.hxml</li>
+<li>build_lua.hxml</li>
+<li>build_neko.hxml</li>
 <li>build_node.hxml</li>
 <li>build_python.hxml</li>
 </ul>
-<p>Check out the files in the <a href="../code"><code>/code</code></a>-folder.</p>
+<p>To build all projects I use <a href="../code/build_all.hxml"><code>build_all.hxml</code></a> to build all other build files.</p>
+<p>If a specific target doesn&apos;t work, I will explain it in this file</p>
+<p>Check out this structure in the <a href="../code"><code>/code</code></a>-folder.</p>
 <h2 id="build-all-targets-with-haxe-and-start-the-specific-target"><a name="build-all-targets-with-haxe-and-start-the-specific-target" class="plugin-anchor" href="#build-all-targets-with-haxe-and-start-the-specific-target"><i class="fa fa-link" aria-hidden="true"></i></a>Build all targets with Haxe and start the specific target</h2>
 <p>To finish and see what we have, build the file and see the result</p>
 <ol>
 <li>Open your terminal</li>
-<li><code>cd</code> to the correct folder where you have saved the <code>build.hxml</code></li>
-<li>type <code>haxe build.hxml</code></li>
+<li><code>cd</code> to the correct folder where you have saved the <code>build_all.hxml</code></li>
+<li>type <code>haxe build_all.hxml</code></li>
 <li>press enter</li>
 </ol>
 
@@ -837,12 +876,12 @@ class Main {
 
             
                 
-                <a href="../00helloworld/example.html" class="navigation navigation-prev " aria-label="Previous page: How to">
+                <a href="../13terminal/example.html" class="navigation navigation-prev " aria-label="Previous page: How to">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../02reading/example.html" class="navigation navigation-next " aria-label="Next page: Example Reading">
+                <a href="../20build/about.html" class="navigation navigation-next " aria-label="Next page: Example hxml">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -853,7 +892,7 @@ class Main {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Example Writing","level":"1.5","depth":1,"next":{"title":"Example Reading","level":"1.6","depth":1,"path":"02reading/example.md","ref":"02reading/example.md","articles":[]},"previous":{"title":"How to","level":"1.4.1","depth":2,"path":"00helloworld/example.md","ref":"00helloworld/example.md","articles":[]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"01writing/example.md","mtime":"2019-05-29T21:34:20.797Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-18T08:47:01.404Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Example ProgressBar","level":"1.16","depth":1,"next":{"title":"Example hxml","level":"1.17","depth":1,"path":"20build/about.md","ref":"20build/about.md","articles":[{"title":"How to","level":"1.17.1","depth":2,"path":"20build/example.md","ref":"20build/example.md","articles":[]}]},"previous":{"title":"How to","level":"1.15.1","depth":2,"path":"13terminal/example.md","ref":"13terminal/example.md","articles":[]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"14cli_progress/example.md","mtime":"2019-06-18T08:46:49.265Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-18T08:47:01.404Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
