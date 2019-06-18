@@ -12,8 +12,10 @@ You want to know more about the languages that currently don't work (or don't wo
 
 
 For now node.js fails: ` Error: ENOTSUP: operation not supported on socket, fsync` which is weird... why do I need a socket (need to investigate)
-Python works, but not like the other targets: the string is prepent to the cli and thus becomes really long (and doesn't work anymore) + the fill is not known in Python (might be fixed in Haxe4)
-Lua works, but never shows an update. It waits and only shows the 100% bar.
+
+Python works but the character use for fill has a strange effect so I replace it with a condition
+
+Lua works with a weird hack...
 
 
 Check the [code folder](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code) for more comments.
