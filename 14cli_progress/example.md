@@ -8,7 +8,7 @@ I wanted to have a progressBar in my cli, and you can for most languages.
 
 I say most, but not everything works like I would expect and I haven't fixed it for the languages.
 
-You want to know more about the languages that currently don't work (or don't work properly) check out the [`build_all.hxml`](code/build_all.hxml)
+You want to know more about the languages that currently don't work (or don't work properly) check out the [`build_all.hxml`](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code/build_all.hxml)
 
 
 For now node.js fails: ` Error: ENOTSUP: operation not supported on socket, fsync` which is weird... why do I need a socket (need to investigate)
@@ -16,7 +16,7 @@ Python works, but not like the other targets: the string is prepent to the cli a
 Lua works, but never shows an update. It waits and only shows the 100% bar.
 
 
-Check the [code folder](code) for more comments.
+Check the [code folder](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code) for more comments.
 
 
 
@@ -40,7 +40,7 @@ See example below:
 
 ## The Main.hx
 
-You probably can figure out how it would work so check out [Main.hx](code/src/Main.hx)
+You probably can figure out how it would work so check out [Main.hx](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code/src/Main.hx)
 
 The progressBar expects two values: the current value (an `Int`) and the total (also an `Int`)
 
@@ -91,7 +91,7 @@ So you could build with one file many backends.
 
 But not every feature works automaticly in all the languages and to prevent it from building I decided to have a little different structure.
 
-Currently I use [`build.hxml`](/code/build.hxml) for vscode syntax checking:
+Currently I use [`build.hxml`](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code/build.hxml) for vscode syntax checking:
 
 ```bash
 -lib markdown
@@ -111,12 +111,12 @@ And have individual build files for the different targets:
 - build_node.hxml
 - build_python.hxml
 
-To build all projects I use [`build_all.hxml`](/code/build_all.hxml) to build all other build files.
+To build all projects I use [`build_all.hxml`](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code/build_all.hxml) to build all other build files.
 
 If a specific target doesn't work, I will explain it in this file
 
 
-Check out this structure in the [`/code`](/code)-folder.
+Check out this structure in the [`/code`](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code)-folder.
 
 
 
