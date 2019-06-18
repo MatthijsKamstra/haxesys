@@ -771,7 +771,7 @@
 <pre><code>npm install -g resume-cli
 </code></pre><p>And created a &quot;empty&quot; resume.json</p>
 <pre><code>resume init
-</code></pre><p>Check the <a href="code">code folder</a> for more comments.</p>
+</code></pre><p>Check the <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code" target="_blank">code folder</a> for more comments.</p>
 <p>In this example we are going to read and use a <code>.json</code> file.
 We will convert the json to <code>.md</code>, <code>.txt</code> and some basic <code>.html</code></p>
 <h2 id="how-to-start"><a name="how-to-start" class="plugin-anchor" href="#how-to-start"><i class="fa fa-link" aria-hidden="true"></i></a>How to start</h2>
@@ -785,7 +785,7 @@ See example below:</p>
         - Main.hx
     - build.hxml
 </code></pre><h2 id="the-mainhx"><a name="the-mainhx" class="plugin-anchor" href="#the-mainhx"><i class="fa fa-link" aria-hidden="true"></i></a>The Main.hx</h2>
-<p>This example is getting to big to post here, so if you want to check out the complete file go and check out <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/Main.hx" target="_blank">Main.hx</a></p>
+<p>This example is getting to big to post here, so if you want to check out the complete file go and check out <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/src/Main.hx" target="_blank">Main.hx</a></p>
 <p>So the first part of this code is loading the <code>json</code> file:</p>
 <pre><code>var path = Path.normalize(ASSETS + &apos;/resume.json&apos;);
 
@@ -803,7 +803,7 @@ if (sys.FileSystem.exists(path)) {
 </code></pre>
 <p>To make that easier I use <a href="http://haxe.org/manual/type-system-typedef.html" target="_blank"><code>typedef</code></a></p>
 <p>We convert the json data to <code>ResumeObjObj</code> so when we use a IDE it will use autocompletion</p>
-<p>Check out <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/AST.hx" target="_blank">AST.hx</a>, it&apos;s too big to show it all here.</p>
+<p>Check out <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/src/AST.hx" target="_blank">AST.hx</a>, it&apos;s too big to show it all here.</p>
 <p>But the &quot;toplevel&quot; you can see the basic structure of resume.json</p>
 <pre><code class="lang-haxe"><span class="hljs-keyword">typedef</span> ResumeObjObj = {
     <span class="hljs-keyword">var</span> education:Array&lt;Education&gt;;
@@ -819,21 +819,35 @@ if (sys.FileSystem.exists(path)) {
 };
 </code></pre>
 <h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
-<p>I use one <a href="../code/build.hxml"><code>build.hxml</code></a> to build all other build files:</p>
+<p>Normally you would have one <code>build.hxml</code> that would build everything you want to transpile to.
+So you could build with one file many backends.</p>
+<p>But not every feature works automaticly in all the languages and to prevent it from building I decided to have a little different structure.</p>
+<p>Currently I use <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/build.hxml" target="_blank"><code>build.hxml</code></a> for vscode syntax checking:</p>
+<pre><code class="lang-bash">-lib markdown
+-cp src
+-D analyzer-optimize
+-main Main
+--interp
+</code></pre>
+<p>And have individual build files for the different targets:</p>
 <ul>
 <li>build_cpp.hxml</li>
 <li>build_cs.hxml</li>
 <li>build_java.hxml</li>
+<li>build_lua.hxml</li>
+<li>build_neko.hxml</li>
 <li>build_node.hxml</li>
 <li>build_python.hxml</li>
 </ul>
-<p>Check out the files in the <a href="../code"><code>/code</code></a>-folder.</p>
+<p>To build all projects I use <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code/build_all.hxml" target="_blank"><code>build_all.hxml</code></a> to build all other build files.</p>
+<p>If a specific target doesn&apos;t work, I will explain it in this file</p>
+<p>Check out this structure in the <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code" target="_blank"><code>code</code></a>-folder.</p>
 <h2 id="build-all-targets-with-haxe-and-start-the-specific-target"><a name="build-all-targets-with-haxe-and-start-the-specific-target" class="plugin-anchor" href="#build-all-targets-with-haxe-and-start-the-specific-target"><i class="fa fa-link" aria-hidden="true"></i></a>Build all targets with Haxe and start the specific target</h2>
 <p>To finish and see what we have, build the file and see the result</p>
 <ol>
 <li>Open your terminal</li>
-<li><code>cd</code> to the correct folder where you have saved the <code>build.hxml</code></li>
-<li>type <code>haxe build.hxml</code></li>
+<li><code>cd</code> to the correct folder where you have saved the <code>build_all.hxml</code></li>
+<li>type <code>haxe build_all.hxml</code></li>
 <li>press enter</li>
 </ol>
 
@@ -879,7 +893,7 @@ if (sys.FileSystem.exists(path)) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.13.1","depth":2,"next":{"title":"Example cli","level":"1.14","depth":1,"path":"12cli/about.md","ref":"12cli/about.md","articles":[{"title":"How to","level":"1.14.1","depth":2,"path":"12cli/example.md","ref":"12cli/example.md","articles":[]}]},"previous":{"title":"Example resume","level":"1.13","depth":1,"path":"11resume/about.md","ref":"11resume/about.md","articles":[{"title":"How to","level":"1.13.1","depth":2,"path":"11resume/example.md","ref":"11resume/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"11resume/example.md","mtime":"2019-06-18T08:25:31.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-18T09:15:25.346Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.13.1","depth":2,"next":{"title":"Example cli","level":"1.14","depth":1,"path":"12cli/about.md","ref":"12cli/about.md","articles":[{"title":"How to","level":"1.14.1","depth":2,"path":"12cli/example.md","ref":"12cli/example.md","articles":[]}]},"previous":{"title":"Example resume","level":"1.13","depth":1,"path":"11resume/about.md","ref":"11resume/about.md","articles":[{"title":"How to","level":"1.13.1","depth":2,"path":"11resume/example.md","ref":"11resume/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"11resume/example.md","mtime":"2019-06-18T09:26:40.040Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-18T09:30:15.462Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -767,7 +767,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="example-clicommand"><a name="example-clicommand" class="plugin-anchor" href="#example-clicommand"><i class="fa fa-link" aria-hidden="true"></i></a>Example CLI/command</h1>
-<p>Check the <a href="code">code folder</a> for more comments.</p>
+<p>Check the <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code" target="_blank">code folder</a> for more comments.</p>
 <h2 id="how-to-start"><a name="how-to-start" class="plugin-anchor" href="#how-to-start"><i class="fa fa-link" aria-hidden="true"></i></a>How to start</h2>
 <p>Create a folder named <strong>foobar</strong> (please use a better name; any name will do) and create folders <strong>assets</strong> and <strong>src</strong>.
 See example below:</p>
@@ -795,21 +795,35 @@ p.close();
 </code></pre>
 <p>sort of trying to read if you have ffmpeg installed via <code>ffmpeg -version</code> asking the version of the installed programm</p>
 <h2 id="the-haxe-build-file-buildhxml"><a name="the-haxe-build-file-buildhxml" class="plugin-anchor" href="#the-haxe-build-file-buildhxml"><i class="fa fa-link" aria-hidden="true"></i></a>The Haxe build file, build.hxml</h2>
-<p>I use one <a href="../code/build.hxml"><code>build.hxml</code></a> to build all other build files:</p>
+<p>Normally you would have one <code>build.hxml</code> that would build everything you want to transpile to.
+So you could build with one file many backends.</p>
+<p>But not every feature works automaticly in all the languages and to prevent it from building I decided to have a little different structure.</p>
+<p>Currently I use <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code/build.hxml" target="_blank"><code>build.hxml</code></a> for vscode syntax checking:</p>
+<pre><code class="lang-bash">-lib markdown
+-cp src
+-D analyzer-optimize
+-main Main
+--interp
+</code></pre>
+<p>And have individual build files for the different targets:</p>
 <ul>
 <li>build_cpp.hxml</li>
 <li>build_cs.hxml</li>
 <li>build_java.hxml</li>
+<li>build_lua.hxml</li>
+<li>build_neko.hxml</li>
 <li>build_node.hxml</li>
 <li>build_python.hxml</li>
 </ul>
-<p>Check out the files in the <a href="../code"><code>/code</code></a>-folder.</p>
+<p>To build all projects I use <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code/build_all.hxml" target="_blank"><code>build_all.hxml</code></a> to build all other build files.</p>
+<p>If a specific target doesn&apos;t work, I will explain it in this file</p>
+<p>Check out this structure in the <a href="https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code" target="_blank"><code>code</code></a>-folder.</p>
 <h2 id="build-all-targets-with-haxe-and-start-the-specific-target"><a name="build-all-targets-with-haxe-and-start-the-specific-target" class="plugin-anchor" href="#build-all-targets-with-haxe-and-start-the-specific-target"><i class="fa fa-link" aria-hidden="true"></i></a>Build all targets with Haxe and start the specific target</h2>
 <p>To finish and see what we have, build the file and see the result</p>
 <ol>
 <li>Open your terminal</li>
-<li><code>cd</code> to the correct folder where you have saved the <code>build.hxml</code></li>
-<li>type <code>haxe build.hxml</code></li>
+<li><code>cd</code> to the correct folder where you have saved the <code>build_all.hxml</code></li>
+<li>type <code>haxe build_all.hxml</code></li>
 <li>press enter</li>
 </ol>
 
@@ -855,7 +869,7 @@ p.close();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.15.1","depth":2,"next":{"title":"Example ProgressBar","level":"1.16","depth":1,"path":"14cli_progress/example.md","ref":"14cli_progress/example.md","articles":[]},"previous":{"title":"Example terminal","level":"1.15","depth":1,"path":"13terminal/about.md","ref":"13terminal/about.md","articles":[{"title":"How to","level":"1.15.1","depth":2,"path":"13terminal/example.md","ref":"13terminal/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"13terminal/example.md","mtime":"2019-06-14T15:25:25.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-18T09:15:25.346Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to","level":"1.15.1","depth":2,"next":{"title":"Example ProgressBar","level":"1.16","depth":1,"path":"14cli_progress/example.md","ref":"14cli_progress/example.md","articles":[]},"previous":{"title":"Example terminal","level":"1.15","depth":1,"path":"13terminal/about.md","ref":"13terminal/about.md","articles":[{"title":"How to","level":"1.15.1","depth":2,"path":"13terminal/example.md","ref":"13terminal/example.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":">=2.0.0","theme":"default","variables":{},"plugins":["edit-link","disqus","ga","anchors"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"haxe-and-sys"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-67866831-7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"","base":"https://github.com/MatthijsKamstra/haxesys/blob/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"structure":{"langs":"LANGS.md","readme":"intro.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"13terminal/example.md","mtime":"2019-06-18T09:20:19.733Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-18T09:30:15.462Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

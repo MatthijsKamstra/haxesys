@@ -1,7 +1,7 @@
 # Example CLI
 
 
-Check the [code folder](/code) for more comments.
+Check the [code folder](https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code) for more comments.
 
 
 
@@ -23,7 +23,7 @@ See example below:
 
 ## The Main.hx
 
-This example is getting to big to post here, so if you want to check out the complete file go and check out [Main.hx](https://github.com/MatthijsKamstra/haxesys/tree/master/12cli/code/Main.hx)
+This example is getting to big to post here, so if you want to check out the complete file go and check out [Main.hx](https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code/src/Main.hx)
 
 
 But I want to show you how it works in this simple example:
@@ -69,19 +69,39 @@ for (i in 0...args.length) {
 }
 ```
 
-
-
 ## The Haxe build file, build.hxml
 
-I use one [`build.hxml`](/code/build.hxml) to build all other build files:
+Normally you would have one `build.hxml` that would build everything you want to transpile to.
+So you could build with one file many backends.
+
+But not every feature works automaticly in all the languages and to prevent it from building I decided to have a little different structure.
+
+Currently I use [`build.hxml`](https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code/build.hxml) for vscode syntax checking:
+
+```bash
+-lib markdown
+-cp src
+-D analyzer-optimize
+-main Main
+--interp
+```
+
+And have individual build files for the different targets:
 
 - build_cpp.hxml
 - build_cs.hxml
 - build_java.hxml
+- build_lua.hxml
+- build_neko.hxml
 - build_node.hxml
 - build_python.hxml
 
-Check out the files in the [`/code`](/code)-folder.
+To build all projects I use [`build_all.hxml`](https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code/build_all.hxml) to build all other build files.
+
+If a specific target doesn't work, I will explain it in this file
+
+
+Check out this structure in the [`code`](https://github.com/MatthijsKamstra/haxesys/tree/master/13terminal/code)-folder.
 
 
 
@@ -90,9 +110,7 @@ Check out the files in the [`/code`](/code)-folder.
 To finish and see what we have, build the file and see the result
 
 1. Open your terminal
-2. `cd ` to the correct folder where you have saved the `build.hxml`
-3. type `haxe build.hxml`
+2. `cd ` to the correct folder where you have saved the `build_all.hxml`
+3. type `haxe build_all.hxml`
 4. press enter
-
-
 

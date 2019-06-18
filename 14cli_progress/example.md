@@ -116,7 +116,7 @@ To build all projects I use [`build_all.hxml`](https://github.com/MatthijsKamstr
 If a specific target doesn't work, I will explain it in this file
 
 
-Check out this structure in the [`/code`](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code)-folder.
+Check out this structure in the [`code`](https://github.com/MatthijsKamstra/haxesys/tree/master/14cli_progress/code)-folder.
 
 
 
