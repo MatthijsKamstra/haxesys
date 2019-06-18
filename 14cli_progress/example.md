@@ -8,7 +8,7 @@ I wanted to have a progressBar in my cli, and you can for most languages.
 
 I say most, but not everything works like I would expect and I haven't fixed it for the languages.
 
-You want to know more about the languages that currently don't work (or don't work properly) check out the [`build_all.hxml`](/code/build_all.hxml)
+You want to know more about the languages that currently don't work (or don't work properly) check out the [`build_all.hxml`](code/build_all.hxml)
 
 
 For now node.js fails: ` Error: ENOTSUP: operation not supported on socket, fsync` which is weird... why do I need a socket (need to investigate)
@@ -16,7 +16,7 @@ Python works, but not like the other targets: the string is prepent to the cli a
 Lua works, but never shows an update. It waits and only shows the 100% bar.
 
 
-Check the [code folder](/code) for more comments.
+Check the [code folder](code) for more comments.
 
 
 
