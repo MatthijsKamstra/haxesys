@@ -33,6 +33,7 @@ This is the summary of my book.
    * [How to](12cli/example.md)
 * [Example terminal](13terminal/about.md)
    * [How to](13terminal/example.md)
+* [Example ProgressBar](14cli_progress/example.md)
 * [Example hxml](20build/about.md)
    * [How to](20build/example.md)
 * Resources
