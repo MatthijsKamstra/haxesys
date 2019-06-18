@@ -4,14 +4,14 @@
 # -cmd echo "  │ ├── node"
 # -cmd haxe build_node.hxml
 
-# python string doesn't clean up + fill doesn't work
-# -cmd echo "  │ ├── python"
-# -cmd haxe build_python.hxml
+# python really doesn't like the character used for fill, so for python we change it to `X`
+-cmd echo "  │ ├── python"
+-cmd haxe build_python.hxml
 
-# works but never shows the progress (only 100% progressbar)
-# -cmd echo "  │ ├── lua"
-# -cmd haxe build_lua.hxml
-#
+# needs a weird little hack
+-cmd echo "  │ ├── lua"
+-cmd haxe build_lua.hxml
+
 -cmd echo "  │ ├── neko"
 -cmd haxe build_neko.hxml
 -cmd echo "  │ ├── cpp"

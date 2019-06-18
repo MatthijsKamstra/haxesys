@@ -93,5 +93,12 @@ build_all.hxml
 build_all.hxml
 -cmd echo "│ ├── 13terminal/code"
 
+# 14cli_progress
+-cmd cd ../../
+-cmd cd 14cli_progress/code/
+--next
+build_all.hxml
+-cmd echo "│ ├── 14cli_progress/code"
+
 
 -cmd echo "└── Finished Haxe build"
