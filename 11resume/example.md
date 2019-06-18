@@ -13,7 +13,7 @@ resume init
 ```
 
 
-Check the [code folder](https://github.com/MatthijsKamstra/haxesys/tree/master/11resume/code) for more comments.
+Check the [code folder](code/) for more comments.
 
 In this example we are going to read and use a `.json` file.
 We will convert the json to `.md`, `.txt` and some basic `.html`

@@ -1,7 +1,7 @@
 # Example CLI/command
 
 
-Check the [code folder](/code) for more comments.
+Check the [code folder](code/) for more comments.
 
 
 
