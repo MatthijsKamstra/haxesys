@@ -1,6 +1,6 @@
 -cp src
--main Main
--python bin/python/main.py
+-main Server
+-python bin/python/server.py
 # -debug
 -dce full
 
@@ -8,4 +8,4 @@
 
 # run application
 -cmd cd bin/python
--cmd python3 main.py
+-cmd python3 server.py

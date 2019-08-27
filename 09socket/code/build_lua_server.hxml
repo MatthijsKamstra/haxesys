@@ -1,0 +1,11 @@
+-cp src
+-main Server
+-lua bin/lua/server.lua
+# -debug
+-dce full
+
+--next
+
+# run application
+-cmd cd bin/lua
+-cmd lua server.lua

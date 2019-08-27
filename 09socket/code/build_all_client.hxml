@@ -1,0 +1,25 @@
+-cmd echo "  ├─┬ Start building targets"
+
+# Error: Could not process argument Error: Cannot find module 'deasync'
+# -cmd echo "  │ ├── node"
+# -cmd haxe build_node_client.hxml
+
+# Error: ConnectionRefusedError(61, 'Connection refused')
+# -cmd echo "  │ ├── python"
+# -cmd haxe build_python_client.hxml
+
+# lua: client.lua:133: attempt to index a nil value (global 'sys')
+# -cmd echo "  │ ├── lua"
+# -cmd haxe build_lua_client.hxml
+
+-cmd echo "  │ ├── neko"
+-cmd haxe build_neko_client.hxml
+-cmd echo "  │ ├── cpp"
+-cmd haxe build_cpp_client.hxml
+-cmd echo "  │ ├── cs"
+-cmd haxe build_cs_client.hxml
+-cmd echo "  │ ├── java"
+-cmd haxe build_java_client.hxml
+
+
+-cmd echo "  └── Finished building targets"

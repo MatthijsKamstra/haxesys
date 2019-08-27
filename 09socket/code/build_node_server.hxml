@@ -1,8 +1,8 @@
 -lib hxnodejs
 
 -cp src
--main Main
--js bin/node/main.js
+-main Server
+-js bin/node/server.js
 # -debug
 -dce full
 -D js-es=6
@@ -11,4 +11,4 @@
 
 # run application
 -cmd cd bin/node
--cmd node main.js
+-cmd node server.js

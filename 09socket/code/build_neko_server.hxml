@@ -1,0 +1,12 @@
+-cp src
+-main Server
+-neko bin/neko/server.n
+# -debug
+-dce full
+
+--next
+
+# run application
+-cmd cd bin/neko
+# -cmd nekotools boot bin/server.n
+-cmd neko server.n

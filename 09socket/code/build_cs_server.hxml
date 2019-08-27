@@ -1,5 +1,5 @@
 -cp src
--main Main
+-main Server
 -cs bin/cs
 # -debug
 -dce full
@@ -8,4 +8,4 @@
 
 # run application
 -cmd cd bin/cs/bin
--cmd mono Main.exe
+-cmd mono Server.exe
