@@ -1,0 +1,11 @@
+-cp src
+--main Main
+--hl bin/hl/Main.hl
+# -debug
+-dce full
+
+--next
+
+# run application
+-cmd cd bin/hl
+-cmd hl Main.hl

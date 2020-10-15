@@ -76,29 +76,35 @@ build.hxml
 -cmd cd ../../
 -cmd cd 11resume/code/
 --next
-build_all.hxml
+build.hxml
 -cmd echo "│ ├── 11resume/code"
 
 # 12cli
 -cmd cd ../../
 -cmd cd 12cli/code/
 --next
-build_all.hxml
+build.hxml
 -cmd echo "│ ├── 12cli/code"
 
 # 13terminal
 -cmd cd ../../
 -cmd cd 13terminal/code/
 --next
-build_all.hxml
+build.hxml
 -cmd echo "│ ├── 13terminal/code"
 
 # 14cli_progress
 -cmd cd ../../
 -cmd cd 14cli_progress/code/
 --next
-build_all.hxml
+build.hxml
 -cmd echo "│ ├── 14cli_progress/code"
 
+# 19untyped
+-cmd cd ../../
+-cmd cd 19untyped/code/
+--next
+build.hxml
+-cmd echo "│ ├── 19untyped/code"
 
 -cmd echo "└── Finished Haxe build"

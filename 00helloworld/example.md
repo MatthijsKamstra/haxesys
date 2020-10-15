@@ -11,7 +11,6 @@ See example below:
 	- build.hxml
 ```
 
-
 ## The Main.hx
 
 Open your favorite editor, copy/paste the code and save it in the `src` folder.
@@ -46,13 +45,12 @@ You could create an even shorter "hello world" example:
 </iframe>
 
 But I think it's a good idea to use the static main function only to start the constructor
+
 ```haxe
 static public function main() {var main = new Main(); }
 ```
 
 > If you want certain code to run automatically, you need to put it in a static main function, and specify the class in the compiler arguments.
-
-
 
 ## The Haxe build file, build.hxml
 
@@ -85,10 +83,7 @@ To build all projects I use [`build_all.hxml`](https://github.com/MatthijsKamstr
 
 If a specific target doesn't work, I will explain it in this file
 
-
 Check out this structure in the [`code`](https://github.com/MatthijsKamstra/haxesys/tree/master/00helloworld/code)-folder.
-
-
 
 ## Build all targets with Haxe and start the specific target
 

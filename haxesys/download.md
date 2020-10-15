@@ -6,7 +6,6 @@ Obviously you need to install Haxe. There are a [couple of ways to do it](../hax
 
 After that you need to install `hxcs`-lib via [haxelib](#haxelib) and last but not least [.NET development framework (either Microsoft.NET or Mono)](#cs).
 
-
 - Lua
 - neko
 - nodejs
@@ -15,28 +14,26 @@ After that you need to install `hxcs`-lib via [haxelib](#haxelib) and last but n
 
 And a [code editor](#ide) will be useful!
 
-----
+---
 
 Current Haxe version is (at the time of writing):
 
-* **Haxe** v3.4.7
+- **Haxe** v4.1.4
 
 But if the version numbers changed, it means I haven't updated this part of the document in some time :D
 
 <a name="haxe"></a>
+
 ## Download Haxe
 
 ![](../img/haxe_logo.png)
 
-* Get your version here: [http://haxe.org/download/](http://haxe.org/download/)
-
-
+- Get your version here: [http://haxe.org/download/](http://haxe.org/download/)
 
 <a name="haxelib">
 ### Haxelib
 
 After you have installed Haxe, you automatically have access to `haxelib`. Use that you install `hxcs`:
-
 
 ```bash
 haxelib install hxcs
@@ -47,7 +44,7 @@ Source: <https://haxe.org/manual/target-cs-getting-started.html>
 <a name="cs">
 ## Download .NET development framework
 
-* Get your version here: <https://dotnet.microsoft.com/>
+- Get your version here: <https://dotnet.microsoft.com/>
 
 Press that big "Get started"-button and you will get instructions how to proceed on your platform.
 
@@ -77,15 +74,34 @@ luarocks install luasocket
 luarocks install luv
 ```
 
+_important to know which version you installed_
+
+```
+lua -v
+```
+
+(in my case: "Lua 5.3.5 Copyright (C) 1994-2018 Lua.org, PUC-Rio")
+
+On Lua 5.1, install the bitops library:
+
+```
+luarocks install luabitop
+```
+
+On Lua 5.3, install the bit32 library instead:
+
+```
+luarocks install bit32
+luarocks install luautf8
+```
 
 For Windows/Linux I would advice you follow the instructions:
 
 - [Lua website](https://www.lua.org/start.html#installing)
 - [Luarocks](https://github.com/luarocks/luarocks/wiki/Download)
 
-
-
 <a name="ide"></a>
+
 ## Code Editors
 
 You can find an extensive list on [http://haxe.org/](http://haxe.org/documentation/introduction/editors-and-ides.html).
@@ -110,5 +126,4 @@ Install [Sublimetext 2](http://sublimetext.com/) with the [haxe sublime2 bundle]
 It's freakish difficult to setup a project, but after that AWESOME!
 [IntelliJ IDEA](http://www.jetbrains.com/idea/) with [Haxe support plugin](https://plugins.jetbrains.com/plugin/6873)
 
-
-*Read more about code editors [here](../haxe/choosing-a-code-editor.md)*
+_Read more about code editors [here](../haxe/choosing-a-code-editor.md)_
