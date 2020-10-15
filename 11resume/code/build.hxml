@@ -5,11 +5,13 @@
 -cmd echo "  │ ├── python"
 -cmd haxe build_python.hxml
 
-# lua: main.lua:2076: bad argument #1 to 'cur' (table expected, got string)
+# lua: src/Main.hx:161: [FIXME] type: TFunction / indexOf: <function>
+-cmd echo "  │ ├── lua [FIXME] type: TFunction / indexOf: <function>"
 # -cmd echo "  │ ├── lua"
 # -cmd haxe build_lua.hxml
 
 # hmmm weird stuff happening here, but neko is antique so might not be the best solution
+-cmd echo "  │ ├── neko [FIXME]"
 # -cmd echo "  │ ├── neko"
 # -cmd haxe build_neko.hxml
 

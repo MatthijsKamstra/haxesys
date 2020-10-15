@@ -10,6 +10,7 @@ class Server {
 		TARGET = Sys.getCwd().split('bin/')[1].split('/')[0]; // yep, that works in this folder structure
 
 		trace('Server - ${TARGET}');
+		Sys.println('Server - ${TARGET}');
 
 		var host = new Host(Host.localhost());
 		var socket = new Socket();
@@ -19,7 +20,11 @@ class Server {
 		while (true) {
 			var c:sys.net.Socket = socket.accept();
 			trace('Client connected... ${c.host()}');
-			c.write("hello\n");
+			Sys.println('Client connected... ${c.host()}');
+			Sys.stdout().writeString('Client connected... ${c.host()}');
+			c.write("hello !\n");
+			c.write('Server - $TARGET \n');
+			c.write("Current date: " + Date.now() + "\n");
 			c.write("your IP is " + c.peer().host.toString() + "\n");
 			c.write("exit");
 			c.close();

@@ -25,11 +25,12 @@ class Main {
 		#elseif php
 		Sys.println('[${TARGET}]');
 		untyped __php__('// [php] comment');
+		php.Syntax.code('// [php] comment');
 		untyped __php__("echo '<pre>'; print_r($myMessage); echo '</pre>';");
 		untyped ('// [${TARGET}] simple untyped');
 		#elseif java
 		Sys.println('[${TARGET}]');
-		untyped __java__('// [java] comment');
+		// untyped __java__('// [java] comment');
 		untyped ('// [${TARGET}] simple untyped');
 		#elseif cs
 		Sys.println('[${TARGET}]');
@@ -47,17 +48,19 @@ class Main {
 		untyped ('// [${TARGET}] simple untyped');
 		#elseif python
 		// untyped __python__('# [python] comment');
+		python.Syntax.code('# [python] comment');
 		untyped ('# [python] comment');
 		#elseif lua
 		Sys.println('[${TARGET}]');
 		untyped __lua__('-- [lua] comment');
 		untyped ('// [${TARGET}] simple untyped');
 		#elseif neko
+		Sys.println('[${TARGET}]');
 		// untyped __neko__('// [neko] comment');
 		untyped ('// [${TARGET}] simple untyped');
 		#elseif jvm
-		untyped __java__('// [jvm] comment');
-		untyped __svm__('// [jvm] comment');
+		Sys.println('[${TARGET}]');
+		untyped __jvm__('// [jvm] comment');
 		untyped ('// [${TARGET}] simple untyped');
 		#else
 		untyped ('// haxe lsss');
