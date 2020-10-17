@@ -1,12 +1,12 @@
 -cp src
 -main Client
--neko bin/neko/client.n
-# -debug
+-neko bin/client/neko/client.n
+-debug
 -dce full
 
 --next
 
 # run application
--cmd cd bin/neko
+-cmd cd bin/client/neko
 # -cmd nekotools boot bin/client.n
 -cmd neko client.n

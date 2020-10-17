@@ -8,5 +8,5 @@
 
 # run application
 -cmd cd bin/server/cpp
-# -cmd ./Server
 -cmd ./Server-debug
+# -cmd ./Server
