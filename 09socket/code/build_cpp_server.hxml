@@ -1,11 +1,12 @@
 -cp src
 -main Server
--cpp bin/cpp
-# -debug
+-cpp bin/server/cpp
+-debug
 -dce full
 
 --next
 
 # run application
--cmd cd bin/cpp
--cmd ./Server
+-cmd cd bin/server/cpp
+# -cmd ./Server
+-cmd ./Server-debug

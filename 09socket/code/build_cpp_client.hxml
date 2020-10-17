@@ -1,11 +1,12 @@
 -cp src
 -main Client
--cpp bin/cpp
-# -debug
+-cpp bin/client/cpp
+-debug
 -dce full
 
 --next
 
 # run application
--cmd cd bin/cpp
--cmd ./Client
+-cmd cd bin/client/cpp
+-cmd ./Client-debug
+# -cmd ./Client

@@ -1,11 +1,12 @@
 -cp src
 -main Server
--java bin/java
-# -debug
+-java bin/server/java
+-debug
 -dce full
 
 --next
 
 # run application
--cmd cd bin/java
--cmd java -jar Server.jar
+-cmd cd bin/server/java
+-cmd java -jar Server-debug.jar
+# -cmd java -jar Server.jar
