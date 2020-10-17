@@ -1,0 +1,7 @@
+-cp src
+--main ClientJs
+--js bin/js/client.js
+# -debug
+-dce full
+
+--cmd cp .template/index.html bin/js/index.html

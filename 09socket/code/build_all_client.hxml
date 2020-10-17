@@ -6,9 +6,9 @@
 # -cmd haxe build_node_client.hxml
 
 # Error: ConnectionRefusedError(61, 'Connection refused')
--cmd echo "  │ ├── python [FIXME] connection refused"
-# -cmd echo "  │ ├── python"
-# -cmd haxe build_python_client.hxml
+# -cmd echo "  │ ├── python [FIXME] connection refused"
+-cmd echo "  │ ├── python"
+-cmd haxe build_python_client.hxml
 
 -cmd echo "  │ ├── lua"
 -cmd haxe build_lua_client.hxml

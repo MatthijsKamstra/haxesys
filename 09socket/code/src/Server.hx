@@ -11,11 +11,13 @@ class Server {
 
 		trace('Server - ${TARGET}');
 		Sys.println('Server - ${TARGET}');
+		Sys.stdout().writeString('Server - ${TARGET}');
 
 		var host = new Host(Host.localhost());
 		var socket = new Socket();
 		socket.bind(host, 5000);
 		socket.listen(1);
+
 		trace('Starting server... ${host}, ${socket.host()}');
 		while (true) {
 			var c:sys.net.Socket = socket.accept();
