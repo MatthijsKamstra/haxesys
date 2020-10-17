@@ -1,10 +1,15 @@
+package;
+
+import sys.io.FileOutput;
+import sys.io.File;
+
 class Main {
 	public function new() {
 		trace("Appending string to file example");
 
-		var str:String = '\ncurrent update: ${Date.now()}';
+		var str:String = '\n- current update: ${Date.now()}';
 
-		var output:sys.io.FileOutput = sys.io.File.append('error.txt', false);
+		var output = File.append('error.txt', false);
 		output.writeString(str);
 		output.close();
 	}
