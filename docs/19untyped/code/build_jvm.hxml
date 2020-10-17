@@ -1,0 +1,11 @@
+-cp src
+--main Main
+--jvm bin/jvm/Main.jar
+# -debug
+-dce full
+
+--next
+
+# run application
+-cmd cd bin/jvm
+-cmd java -jar Main.jar

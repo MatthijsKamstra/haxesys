@@ -76,7 +76,6 @@ class Main {
 		__txt = __txt.replace('**- ', '\t- **'); // convert the double tab to dubble tab list
 		__txt = __txt.replace(': ', ':** '); // create bold in combintaion with previous replace
 
-
 		str += __txt;
 
 		__md = Markdown.markdownToHtml(__txt);
@@ -153,6 +152,8 @@ class Main {
 						unwrapJson(_json, tab + '\t');
 						// trace('--------> ${i}, ${haxe.Json.stringify(_json)}');
 					}
+				case TNull:
+				//
 
 				default:
 					// trace(">>>>>> " + Type.typeof(pjson));

@@ -1,4 +1,5 @@
 -lib hxnodejs
+-lib markdown
 
 -cp src
 -main Main

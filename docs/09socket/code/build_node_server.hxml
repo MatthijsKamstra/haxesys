@@ -1,0 +1,14 @@
+-lib hxnodejs
+
+-cp src
+-main Server
+-js bin/node/server.js
+# -debug
+-dce full
+-D js-es=6
+
+--next
+
+# run application
+-cmd cd bin/node
+-cmd node server.js

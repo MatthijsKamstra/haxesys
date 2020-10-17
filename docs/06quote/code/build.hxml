@@ -5,7 +5,7 @@
 -cmd echo "  │ ├── python"
 -cmd haxe build_python.hxml
 
-# lua: main.lua:1068: 'until' expected (to close 'repeat' at line 981) near 'end'
+#src/Main.hx:29: error: main.lua:3054: attempt to perform arithmetic on a nil value
 # -cmd echo "  │ ├── lua"
 # -cmd haxe build_lua.hxml
 
@@ -17,5 +17,7 @@
 -cmd haxe build_cs.hxml
 -cmd echo "  │ ├── java"
 -cmd haxe build_java.hxml
+-cmd echo "  │ ├── jvm"
+-cmd haxe build_jvm.hxml
 
 -cmd echo "  └── Finished building targets"

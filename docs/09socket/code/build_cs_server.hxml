@@ -1,0 +1,11 @@
+-cp src
+-main Server
+-cs bin/cs
+# -debug
+-dce full
+
+--next
+
+# run application
+-cmd cd bin/cs/bin
+-cmd mono Server.exe

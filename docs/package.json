@@ -1,7 +1,7 @@
 {
-  "name": "haxeunity",
+  "name": "haxesys",
   "version": "1.0.0",
-  "description": "Documenting Haxe and Unity/C#",
+  "description": "Documenting Haxe and system languages",
   "scripts": {
     "test": "helloworld",
     "build": "npm run build:remove && npm run gitbook:build && npm run build:rename",
@@ -10,7 +10,7 @@
     "build:remove:book": "rm -rf _book",
     "build:rename": "mv _book docs",
     "deploy": "npm run build && npm run git:commit && npm run git:push",
-    "git:commit": "git add -A . && git commit -a -m 'update docs haxeunity documentation'",
+    "git:commit": "git add -A . && git commit -a -m 'update docs haxesys documentation'",
     "git:push": "git push",
     "gitbook": "npm run gitbook:install && npm run gitbook:update",
     "gitbook:install": "gitbook install",
@@ -20,7 +20,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MatthijsKamstra/haxeunity.git"
+    "url": "git+https://github.com/MatthijsKamstra/haxesys.git"
   },
   "keywords": [
     "js",
@@ -33,7 +33,7 @@
   "author": "Matthijs Kamstra aka [mck]",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MatthijsKamstra/haxeunity/issues"
+    "url": "https://github.com/MatthijsKamstra/haxesys/issues"
   },
   "homepage": "https://github.com/MatthijsKamstra/haxejs#readme",
   "dependencies": {

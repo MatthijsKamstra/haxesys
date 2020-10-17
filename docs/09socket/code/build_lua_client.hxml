@@ -1,6 +1,6 @@
 -cp src
--main Main
--lua bin/lua/main.lua
+-main Client
+-lua bin/lua/client.lua
 # -debug
 -dce full
 
@@ -8,4 +8,4 @@
 
 # run application
 -cmd cd bin/lua
--cmd lua main.lua
+-cmd lua client.lua

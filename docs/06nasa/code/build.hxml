@@ -1,16 +1,15 @@
 -cmd echo "  ├─┬ Start building targets"
 
-# https is not implemented in all system languages, python should work but doesnt / perhaps haxe 4 that will be fixed
+# https is not implemented in all system languages
 
 -cmd echo "  │ ├── node"
 -cmd haxe build_node.hxml
 
 # should work but doesnt
-# -cmd echo "  │ ├── python"
-# -cmd haxe build_python.hxml
+-cmd echo "  │ ├── python"
+-cmd haxe build_python.hxml
 
-# may need to install https package...
-# lua: main.lua:1130: 'until' expected (to close 'repeat' at line 1043) near 'end'
+# Runtime Error: Https support in haxe.Http is not implemented for this target
 # -cmd echo "  │ ├── lua"
 # -cmd haxe build_lua.hxml
 
@@ -25,9 +24,8 @@
 
 -cmd echo "  │ ├── java"
 -cmd haxe build_java.hxml
-
-
-
+-cmd echo "  │ ├── jvm"
+-cmd haxe build_jvm.hxml
 
 
 -cmd echo "  └── Finished building targets"

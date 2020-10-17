@@ -14,5 +14,7 @@
 -cmd haxe build_cs.hxml
 -cmd echo "  │ ├── java"
 -cmd haxe build_java.hxml
+-cmd echo "  │ ├── jvm"
+-cmd haxe build_jvm.hxml
 
 -cmd echo "  └── Finished building targets"
